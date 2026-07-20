@@ -203,6 +203,14 @@ line-height: 55px
 
   .figma-note{position:sticky;top:0;background:#222;color:#fff;font-size:12px;padding:6px 16px;z-index:50;font-family:sans-serif;}
 
+  /* Products accordion (large PT Serif titles) */
+  details.prod-item{border-top:1px solid #E5DED0;}
+  details.prod-item summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:24px;padding:28px 6px;}
+  details.prod-item summary::-webkit-details-marker{display:none;}
+  details.prod-item summary::after{content:'+';font-size:30px;font-weight:300;color:#420c1e;line-height:1;flex-shrink:0;font-family:system-ui,sans-serif;}
+  details.prod-item[open]>summary::after{content:'–';}
+  details.prod-item .prod-body{padding:0 6px 34px;max-width:760px;font-size:19px;line-height:1.62;color:#534b47;}
+
   /* Educational accordion cards (mastectomy page) */
   .edu-card{background:#AA9C56;}
   .edu-card summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:24px;padding:26px 50px;color:#fff;font-family:'PT Serif',Georgia,serif;font-size:28px;font-weight:400;}
