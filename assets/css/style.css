@@ -202,3 +202,20 @@ line-height: 55px
   footer ul{list-style:none;padding:0;margin:12px 0 0;font-size:14px;line-height:1.9;}
 
   .figma-note{position:sticky;top:0;background:#222;color:#fff;font-size:12px;padding:6px 16px;z-index:50;font-family:sans-serif;}
+
+  /* Educational accordion cards (mastectomy page) */
+  .edu-card{background:#AA9C56;}
+  .edu-card summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:24px;padding:26px 50px;color:#fff;font-family:'PT Serif',Georgia,serif;font-size:28px;font-weight:400;}
+  .edu-card summary::-webkit-details-marker{display:none;}
+  .edu-card summary::after{content:'+';font-size:32px;font-weight:300;color:#fff;line-height:1;flex-shrink:0;font-family:system-ui,sans-serif;}
+  .edu-card[open]>summary::after{content:'\2013';}
+  .edu-card-body{padding:20px 50px 40px;color:#fff;font-family:'Albert Sans',sans-serif;font-size:18px;line-height:1.6;}
+
+  /* Working accordion (details/summary) used for FAQ + product lists */
+  details.accordion{border-top:1px solid #E5DED0;}
+  details.accordion summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:24px;padding:26px 6px;font-family:'Albert Sans',sans-serif;font-weight:500;font-size:21px;color:#1a1413;}
+  details.accordion summary::-webkit-details-marker{display:none;}
+  details.accordion summary::after{content:'+';font-size:26px;font-weight:300;color:#420c1e;line-height:1;flex-shrink:0;}
+  details.accordion[open] summary::after{content:'\2013';}
+  details.accordion .accordion-body{padding:0 6px 30px;max-width:760px;font-family:'Albert Sans',sans-serif;font-size:18px;line-height:29.16px;color:#534b47;}
+  details.accordion .accordion-body a{color:inherit;text-decoration:underline;}
