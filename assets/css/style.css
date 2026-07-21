@@ -29,6 +29,13 @@
   body{margin:0;background:var(--cream);color:#2b2b2b;font-family:'PT Serif',Georgia,serif;}
   .sans{font-family:-apple-system,'Segoe UI',Helvetica,Arial,sans-serif;}
   .serif{font-family:'PT Serif',Georgia,serif;}
+
+  /* CONSOLIDATED HEADING SCALE — 2 sizes per level, desktop */
+  .h1-std{font-family:'PT Serif',Georgia,serif;font-weight:400;font-size:60px;line-height:1.1;}
+  .h2-feature{font-family:'PT Serif',Georgia,serif;font-weight:400;font-size:60px;line-height:68px;}
+  .h2-std{font-family:'PT Serif',Georgia,serif;font-weight:400;font-size:46px;line-height:54px;}
+  .h3-feature{font-family:'PT Serif',Georgia,serif;font-weight:400;font-size:40px;line-height:1.1;}
+  .h3-card{font-family:'Albert Sans',sans-serif;font-weight:600;font-size:22px;line-height:1.3;}
   .wrap{max-width:var(--content);margin:0 auto;padding:0 40px;}
   .label{font-size:12px;letter-spacing:.12em;text-transform:uppercase;}
   a{color:inherit;text-decoration:none;}
@@ -54,7 +61,7 @@
   }
 
   .hero-copy{text-align:center;padding:0 40px 0;color:var(--cream);}
-  .hero-copy h1{font-family:'PT Serif',Georgia,serif;font-size:65px;font-style:normal;font-weight:400;line-height:normal;margin:0;}
+  .hero-copy h1{font-family:'PT Serif',Georgia,serif;font-size:60px;font-style:normal;font-weight:400;line-height:1.1;margin:0;}
   .hero-copy .hero-sub{font-family:'Albert Sans',sans-serif;font-size:25px;font-style:normal;font-weight:400;line-height:30px;margin-top:16px;}
 
   .collage{width:100%;margin-top:100px;overflow:hidden;}
@@ -67,13 +74,13 @@
   .restoration{position:relative;margin-top:40px;height:700px;width:100%;}
   .restoration img{width:100%;height:100%;object-fit:cover;object-position:100% 56%;display:block;}
   .restoration .overlay{position:absolute;inset:0;background:rgba(0,0,0,.45);display:flex;align-items:center;justify-content:center;text-align:center;}
-  .restoration h2{color:var(--cream);font-family:'PT Serif',Georgia,serif;font-size:80px;font-style:normal;font-weight:400;line-height:70px;margin:0;padding:0 24px;}
+  .restoration h2{color:var(--cream);font-family:'PT Serif',Georgia,serif;font-size:60px;font-style:normal;font-weight:400;line-height:68px;margin:0;padding:0 24px;}
 
   /* PRIVATE ROOM */
   .section{padding:64px 40px;}
   .cream-bg{background:var(--cream);}
   .private-room{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center;max-width:var(--content);margin:0 auto;}
-  .private-room h2{font-family:'PT Serif',Georgia,serif;font-size:60px;font-style:normal;font-weight:400;line-height:55px;color:var(--aubergine);margin:0;}
+  .private-room h2{font-family:'PT Serif',Georgia,serif;font-size:60px;font-style:normal;font-weight:400;line-height:68px;color:var(--aubergine);margin:0;}
   .private-room p{margin-top:20px;max-width:90%;font-family:'Albert Sans',sans-serif;font-size:25px;font-style:normal;font-weight:400;line-height:normal;color:#4a4a4a;}
   .link-underline{margin-top:24px;display:inline-block;border-bottom:1px solid var(--aubergine);color:var(--aubergine);font-family:'Albert Sans',sans-serif;font-size:18px;font-style:normal;font-weight:500;line-height:normal;text-transform:uppercase;}
   /* Right-side image gallery bleeds ~30px past the viewport edge (clipped by the
@@ -87,7 +94,7 @@
   .merino-bg{background:var(--merino);}
   .cf-section{padding-left:80px;padding-right:80px;}
   .cf-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;max-width:var(--content);margin:0 auto;align-items:start;}
-  .cf-grid h2{font-family:'PT Serif',Georgia,serif;font-size:60px;font-style:normal;font-weight:400;line-height:70px;color:var(--aubergine);margin:0;}
+  .cf-grid h2{font-family:'PT Serif',Georgia,serif;font-size:60px;font-style:normal;font-weight:400;line-height:68px;color:var(--aubergine);margin:0;}
   .cf-grid p{margin-top:20px;max-width:420px;font-family:'Albert Sans',sans-serif;font-size:25px;font-style:normal;font-weight:400;line-height:normal;color:#4a4a4a;}
   .cf-links{margin-top:24px;display:flex;gap:32px;}
   .cf-links a{font-family:'Albert Sans',sans-serif;font-size:18px;font-style:normal;font-weight:500;line-height:normal;text-transform:uppercase;color:var(--aubergine);}
@@ -99,7 +106,7 @@
   /* INSURANCE BANNER */
   .skyblue-bg{background:var(--skyblue);color:#fff;}
   .ins-grid{display:grid;grid-template-columns:380px 1fr;column-gap:110px;align-items:center;max-width:1440px;margin:0 auto;padding:56px 80px 56px 130px;}
-  .ins-grid h2{font-family:'PT Serif',Georgia,serif;font-size:40px;font-style:normal;font-weight:400;line-height:48px;margin:0;}
+  .ins-grid h2{font-family:'PT Serif',Georgia,serif;font-size:46px;font-style:normal;font-weight:400;line-height:54px;margin:0;}
   .ins-grid p{font-family:'Albert Sans',sans-serif;font-size:25px;font-style:normal;font-weight:400;line-height:normal;opacity:.9;}
   .ins-links{margin-top:16px;display:flex;flex-wrap:wrap;gap:32px 24px;}
   .ins-links a{font-family:'Albert Sans',sans-serif;font-size:18px;font-style:normal;font-weight:500;line-height:normal;text-transform:uppercase;}
@@ -148,10 +155,11 @@ line-height: normal;
 }
 .masonary-grid-home-item--header h3{
   margin: 0 !important;
-  font-size: 30px;
+  font-size: 22px;
   color: #F5B6AF;
   font-family:'Albert Sans';
-  font-weight: 450;
+  font-weight: 600;
+  line-height: 1.3;
   letter-spacing: normal;
 
 }
@@ -162,7 +170,7 @@ font-family: "PT Serif";
 font-size: 60px !important;
 font-style: normal;
 font-weight: 400;
-line-height: 70px; /* 116.667% */
+line-height: 68px; /* consolidated H2-Feature */
 max-width: 50%;
 padding-bottom: 60px;
 }
@@ -191,10 +199,10 @@ padding-bottom: 60px;
 .masonary-grid-home-item--big h3{
 color: #420C1E;
 font-family: "PT Serif";
-font-size: 45px;
+font-size: 40px;
 font-style: normal;
 font-weight: 400;
-line-height: 55px
+line-height: 1.1
 }
 
   /* CARE CARDS */
@@ -202,14 +210,14 @@ line-height: 55px
   .care-card{border-radius:25px;overflow:hidden;}
   .care-card .photo{position:relative;aspect-ratio:661.864/395.247;}
   .care-card .photo img{width:100%;height:100%;object-fit:cover;display:block;}
-  .care-card .photo h3{position:absolute;left:0;right:0;top:42.67%;margin:0;padding:0 24px;text-align:center;white-space:nowrap;color:#fff;font-family:'PT Serif',Georgia,serif;font-size:45px;font-weight:400;line-height:normal;}
+  .care-card .photo h3{position:absolute;left:0;right:0;top:42.67%;margin:0;padding:0 24px;text-align:center;white-space:nowrap;color:#fff;font-family:'PT Serif',Georgia,serif;font-size:40px;font-weight:400;line-height:1.1;}
   .care-card .olive{background:var(--olive);display:flex;flex-direction:column;gap:16px;padding:55px 45px 90px;}
   .care-card .lede{margin:0;font-family:'PT Serif',Georgia,serif;font-size:35px;font-weight:400;line-height:40px;color:var(--offwhite);}
   .care-card .detail{margin:0;font-family:'Albert Sans',sans-serif;font-weight:400;font-size:25px;line-height:30px;color:var(--offwhite);}
 
   /* FAQ */
   .faq-wrap{max-width:980px;margin:0 auto;}
-  .faq-wrap h2{text-align:center;font-family:'PT Serif',Georgia,serif;font-size:50px;font-weight:400;color:var(--aubergine);margin:0;}
+  .faq-wrap h2{text-align:center;font-family:'PT Serif',Georgia,serif;font-size:46px;line-height:54px;font-weight:400;color:var(--aubergine);margin:0;}
   .faq-list{max-width:980px;margin:40px auto 0;}
 
   footer{background:var(--aubergine);color:var(--cream);padding:56px 40px;}
@@ -391,18 +399,18 @@ line-height: 55px
     .collage-row .stack img{width:105px;height:128px;border-radius:10px;object-fit:cover;}
     .hero-bottom-pad{height:28px;}
     .restoration{height:380px;margin-top:0;}
-    .restoration h2{font-size:40px;line-height:48px;}
+    .restoration h2{font-size:36px;line-height:42px;}
 
     /* PRIVATE ROOM */
     .private-room{grid-template-columns:1fr;gap:32px;}
-    .private-room h2{font-size:38px;line-height:1.2;}
+    .private-room h2{font-size:36px;line-height:42px;}
     .private-room p{font-size:18px;max-width:100%;}
     .pr-grid{display:none;}
 
     /* CUSTOM FITTINGS */
     .cf-section{padding-left:30px;padding-right:30px;}
     .cf-grid{grid-template-columns:1fr;gap:47px;}
-    .cf-grid h2{font-size:35px;line-height:45px;color:#1a1413;}
+    .cf-grid h2{font-size:36px;line-height:42px;color:#1a1413;}
     .cf-grid p{font-size:20px;max-width:100%;color:#1a1413;}
     .cf-links{flex-direction:column;gap:20px;}
     .cf-links a{color:#1a1413;border-bottom-color:#1a1413;}
@@ -411,24 +419,26 @@ line-height: 55px
 
     /* INSURANCE BANNER (skyblue) */
     .ins-grid{grid-template-columns:1fr;column-gap:0;padding:40px 24px;}
-    .ins-grid h2{font-size:30px;line-height:1.3;}
+    .ins-grid h2{font-size:30px;line-height:36px;}
     .ins-grid p{font-size:18px;}
 
     /* MASONRY / SAFE SPACE */
     .masonary-grid-home{grid-template-columns:1fr;padding-left:0;gap:16px;}
     .masonary-grid-home-item--big{grid-column:span 1;}
-    .section-masonary-title{font-size:36px !important;max-width:100%;padding-bottom:32px;}
+    .section-masonary-title{font-size:36px !important;line-height:42px !important;max-width:100%;padding-bottom:32px;}
+    .masonary-grid-home-item--header h3{font-size:20px !important;}
+    .masonary-grid-home-item--big h3{font-size:28px !important;}
     .safe-grid{grid-template-columns:1fr;}
 
     /* CARE CARDS */
     .care-grid{grid-template-columns:1fr;}
-    .care-card .photo h3{font-size:32px;}
+    .care-card .photo h3{font-size:28px;}
     .care-card .lede{font-size:25px;line-height:30px;}
     .care-card .detail{font-size:18px;line-height:24px;}
     .care-card .olive{padding:36px 24px 48px;}
 
     /* FAQ */
-    .faq-wrap h2{font-size:32px;}
+    .faq-wrap h2{font-size:30px;line-height:36px;}
 
     /* FOOTER */
     .foot-wrap{flex-direction:column;gap:40px;}
@@ -444,7 +454,6 @@ line-height: 55px
     .building-flex{flex-direction:column !important;gap:32px !important;}
     .building-flex > div:first-child{width:100% !important;height:260px !important;}
     .building-flex > div:last-child{gap:24px !important;}
-    .building-flex h2{font-size:36px !important;}
     .building-flex p{font-size:17px !important;}
 
     /* ABOUT PAGE */
@@ -453,12 +462,11 @@ line-height: 55px
     .about-gallery-grid{grid-template-columns:1fr 1fr !important;gap:12px !important;}
     .about-gallery-grid > div{height:220px !important;}
     .about-exp-flex{flex-direction:column !important;gap:32px !important;}
-    .about-exp-flex h2{font-size:36px !important;width:auto !important;}
+    .about-exp-flex h2{width:auto !important;}
 
     /* PHYSICIANS PAGE hero */
     .phy-hero-flex{flex-direction:column !important;gap:40px !important;padding:100px 24px 60px !important;}
     .phy-hero-flex > div:first-child{width:100% !important;}
-    .phy-hero-flex h1{font-size:38px !important;}
     .phy-hero-flex p{font-size:17px !important;}
     .phy-hero-flex > div:last-child{flex-direction:column !important;gap:16px !important;}
     .phy-hero-flex > div:last-child > div{width:100% !important;height:200px !important;}
@@ -498,7 +506,6 @@ line-height: 55px
     section[style*="padding:44px 40px"]{padding:40px 20px !important;}
 
     /* Hero text inside full-bleed hero sections */
-    section[style*="aspect-ratio"] h1{font-size:36px !important;line-height:1.2 !important;}
     section[style*="aspect-ratio"] p{font-size:17px !important;}
 
     /* Recovery timeline stacked */
@@ -513,43 +520,35 @@ line-height: 55px
     /* Hero: hide image collage on mobile, text-only */
     .phy-hero-flex > div:last-child{display:none !important;}
     .phy-hero-flex{padding:120px 24px 60px !important;}
-    .phy-hero-flex h1{font-size:35px !important;line-height:1.15 !important;}
     .phy-hero-flex p{font-size:19px !important;}
 
     /* "Built for the way you practice" */
     section[style*="padding:96px 40px 0"]{padding:60px 20px 0 !important;}
-    section[style*="padding:96px 40px 0"] h2{font-size:30px !important;}
     div[style*="width:514px;height:483px"]{width:100% !important;height:280px !important;}
 
     /* Specialized and certified fitters */
     section[style*="background:#fbf8f0;padding:96px 100px"]{padding:60px 20px !important;}
-    section[style*="background:#fbf8f0;padding:96px 100px"] h2{font-size:30px !important;}
     section[style*="background:#fbf8f0"] div[style*="grid-template-columns:repeat(3"]{grid-template-columns:1fr !important;}
 
     /* How to refer a patient */
     section[id="refer"]{padding:60px 20px !important;}
-    section[id="refer"] h2{font-size:30px !important;}
     section[id="refer"] div[style*="grid-template-columns:repeat(4"]{grid-template-columns:1fr !important;gap:32px !important;}
 
     /* Insurance (blue) */
     section[style*="background:#619deb;padding:84px 100px"]{padding:60px 20px !important;}
-    section[style*="background:#619deb;padding:84px 100px"] h2{font-size:30px !important;}
     section[style*="background:#619deb"] div[style*="grid-template-columns:0.85fr"]{grid-template-columns:1fr !important;gap:32px !important;}
 
     /* Forms & prescribing resources */
     section[style*="padding:96px 40px;"]{padding:60px 20px !important;}
-    section[style*="padding:96px 40px;"] h2{font-size:30px !important;}
     section[style*="padding:96px 40px;"] span[style*="font-size:25px"]{font-size:20px !important;}
 
     /* Testimonials (physicians) */
     section[style*="background:#f8f3e5;padding:96px 91px"]{padding:60px 20px !important;}
-    section[style*="background:#f8f3e5;padding:96px 91px"] h2{font-size:30px !important;}
     section[style*="background:#f8f3e5;padding:96px 91px"] div[style*="display:flex;gap:32px"]{flex-direction:column !important;}
     section[style*="background:#f8f3e5;padding:96px 91px"] div[style*="width:500px"]{width:100% !important;}
 
     /* FAQ (physicians) */
     section[style*="padding:96px 40px 112px"]{padding:60px 20px 80px !important;}
-    section[style*="padding:96px 40px 112px"] h2{font-size:30px !important;}
 
     /* NAV — stronger override for pages with inline display:flex on nav-links */
     nav ul.nav-links{display:none !important;}
@@ -563,8 +562,6 @@ line-height: 55px
       grid-template-columns:1fr !important;
       gap:24px !important;
     }
-    section[style*="padding:72px 40px"] h2,
-    section[style*="padding: 72px 40px"] h2{font-size:30px !important;line-height:1.2 !important;}
     section[style*="padding:72px 40px"] p,
     section[style*="padding: 72px 40px"] p{font-size:17px !important;}
 
@@ -599,13 +596,11 @@ line-height: 55px
 
     /* Hero */
     section[style*="background:#420c1e"] div[style*="padding:60px 40px"]{padding:60px 20px 70px !important;}
-    section[style*="background:#420c1e"] h1.serif{font-size:36px !important;line-height:1.15 !important;margin-bottom:20px !important;}
     section[style*="background:#420c1e"] p{font-size:17px !important;}
 
     /* Our Story — 2-col grid → single col */
     .about-story-grid{grid-template-columns:1fr !important;gap:32px !important;}
     .about-story-grid > div[style*="height:607px"]{height:280px !important;}
-    .about-story-grid h2{font-size:30px !important;}
     .about-story-grid p{font-size:17px !important;}
 
     /* Gallery — 4-col → 2-col */
@@ -614,7 +609,7 @@ line-height: 55px
 
     /* Our Experience — flex row → col, stats row → col */
     .about-exp-flex{flex-direction:column !important;gap:32px !important;padding:0 !important;}
-    .about-exp-flex h2{font-size:30px !important;width:auto !important;}
+    .about-exp-flex h2{width:auto !important;}
     .about-exp-flex div[style*="gap:44px;border-top"]{flex-direction:column !important;gap:24px !important;}
     .about-exp-flex .serif[style*="font-size:44px"]{font-size:36px !important;}
     section[style*="padding:120px 40px 120px"]{padding:60px 20px !important;}
@@ -623,10 +618,16 @@ line-height: 55px
 
     /* Hero / form */
     section[style*="padding:80px 40px 96px"]{padding:60px 20px 72px !important;}
-    section[style*="padding:80px 40px 96px"] h1{font-size:44px !important;}
     section[style*="padding:80px 40px 96px"] p{font-size:17px !important;}
 
     /* Location cards — 2-col → 1-col */
     .location-cards-grid{grid-template-columns:1fr !important;margin-top:48px !important;}
+
+    /* CONSOLIDATED HEADING SCALE — mobile */
+    .h1-std{font-size:40px !important;line-height:48px !important;}
+    .h2-feature{font-size:36px !important;line-height:42px !important;}
+    .h2-std{font-size:30px !important;line-height:36px !important;}
+    .h3-feature{font-size:28px !important;}
+    .h3-card{font-size:20px !important;}
 
   }
