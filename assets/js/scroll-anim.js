@@ -24,9 +24,6 @@
     [].slice.call(els).forEach(function (el, i) { tag(el, i * step); });
   }
 
-  // Nav (always animate immediately — it's in the viewport on load)
-  tag(document.querySelector('nav'), 0);
-
   // Each section
   document.querySelectorAll('section').forEach(function (sec) {
     var kids = [].slice.call(sec.children).filter(function (c) {
@@ -54,4 +51,22 @@
 
   // Footer → fade as one unit
   tag(document.querySelector('footer'), 0);
+
+  // Exclusive accordion (.edu-card): opening one closes its siblings, but a
+  // card can still be closed by clicking it (standard accordion behaviour).
+  document.querySelectorAll('.edu-card').forEach(function (card) {
+    card.addEventListener('toggle', function () {
+      if (!card.open) return; // only react when this card opens
+      var group = card.parentElement.querySelectorAll('.edu-card');
+      [].forEach.call(group, function (other) {
+        if (other !== card) other.removeAttribute('open');
+      });
+    });
+  });
+
+  // Headroom.js — fixed header hides on scroll-down, shows on scroll-up.
+  var header = document.querySelector('nav');
+  if (header && window.Headroom) {
+    new Headroom(header).init();
+  }
 })();
