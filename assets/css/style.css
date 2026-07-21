@@ -225,7 +225,7 @@ line-height: 55px
   details.prod-item summary::-webkit-details-marker{display:none;}
   details.prod-item summary::after{content:'+';font-size:30px;font-weight:300;color:#420c1e;line-height:1;flex-shrink:0;font-family:system-ui,sans-serif;}
   details.prod-item[open]>summary::after{content:'–';}
-  details.prod-item .prod-body{padding:0 6px 34px;max-width:760px;font-size:19px;line-height:1.62;color:#534b47;}
+  details.prod-item .prod-body{padding:0 6px 34px;max-width:760px;font-family:'Albert Sans',sans-serif;font-weight:400;font-size:20px;line-height:1.62;color:#534b47;}
 
   /* Educational accordion cards (mastectomy page) */
   /* Flow-based accordion: height is content-driven (never a fixed px value),
