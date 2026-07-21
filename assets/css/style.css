@@ -319,7 +319,8 @@ line-height: 55px
       will-change:auto !important;
       gap:0;
       padding:14px 20px 32px;
-      position:relative;
+      position:fixed;
+      top:0;left:0;right:0;
     }
     body.nav-open nav > .isotype{flex:0 0 auto;align-self:center;color:var(--aubergine) !important;}
     nav .isotype{color:var(--aubergine) !important;}
