@@ -546,7 +546,7 @@ line-height: 1.1
     .fitters-grid{grid-template-columns:1fr !important;gap:10px !important;}
 
     /* How to refer a patient */
-    section[id="refer"]{padding:60px 20px !important;}
+    section[id="refer"]{padding:60px 70px !important;}
     .refer-steps-grid{grid-template-columns:1fr !important;gap:32px !important;}
     .refer-step-num{width:40px !important;height:40px !important;font-size:16px !important;}
 
