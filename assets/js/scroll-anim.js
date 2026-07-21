@@ -69,4 +69,17 @@
   if (header && window.Headroom) {
     new Headroom(header).init();
   }
+
+  // Hamburger nav toggle
+  var burger = document.querySelector('.nav-burger');
+  if (burger) {
+    burger.addEventListener('click', function () {
+      document.body.classList.toggle('nav-open');
+    });
+    document.querySelectorAll('.nav-links a, a.nav-med').forEach(function (a) {
+      a.addEventListener('click', function () {
+        document.body.classList.remove('nav-open');
+      });
+    });
+  }
 })();

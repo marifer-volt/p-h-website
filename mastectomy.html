@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>P&H — Mastectomy</title>
 <link rel="stylesheet" href="assets/css/style.css">
 </head>
@@ -19,7 +20,8 @@
       <li ><a href="contact.html">Contact</a></li>
     </ul>
     <a href="physicians.html" class="nav-med sans">Medical professionals</a>
-  </nav>
+    <button class="nav-burger" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
+</nav>
 <div class="sc-host" data-sc-name="mastectomy"><div data-dc-tpl="5" style="font-family: &quot;Albert Sans&quot;, system-ui, sans-serif; color: rgb(26, 20, 19); background: rgb(255, 255, 255);">
 
   
@@ -84,24 +86,26 @@
   <section style="padding: 104px 40px;">
     <div style="max-width: 1100px; margin: 0 auto;">
       <h2 style="font-family: 'PT Serif', Georgia, serif; font-weight: 400; font-size: 50px; line-height: 1.05; margin: 0 0 60px; text-align: center; color: #1a1413;">The recovery timeline</h2>
-      <div style="position: relative; display: flex; justify-content: space-between; align-items: center; margin-bottom: 38px;">
-        <div style="position: absolute; left: 13px; right: 13px; top: 50%; height: 1px; background: #AA9C56;"></div>
-        <div style="position: relative; width: 26px; height: 26px; border-radius: 50%; background: #AA9C56; color: #fff; display: flex; align-items: center; justify-content: center; font-family: 'Albert Sans', sans-serif; font-weight: 600; font-size: 14px;">1</div>
-        <div style="position: relative; width: 26px; height: 26px; border-radius: 50%; background: #AA9C56; color: #fff; display: flex; align-items: center; justify-content: center; font-family: 'Albert Sans', sans-serif; font-weight: 600; font-size: 14px;">2</div>
-        <div style="position: relative; width: 26px; height: 26px; border-radius: 50%; background: #AA9C56; color: #fff; display: flex; align-items: center; justify-content: center; font-family: 'Albert Sans', sans-serif; font-weight: 600; font-size: 14px;">3</div>
+      <!-- Circle row with full-width connecting line -->
+      <div class="recovery-circles" style="position:relative;display:flex;gap:38px;margin-bottom:24px;">
+        <div style="position:absolute;top:13px;left:13px;right:13px;height:1px;background:#AA9C56;"></div>
+        <div style="flex:1;"><div style="position:relative;z-index:1;width:26px;height:26px;border-radius:50%;background:#AA9C56;color:#fff;display:flex;align-items:center;justify-content:center;font-family:'Albert Sans',sans-serif;font-weight:600;font-size:14px;">1</div></div>
+        <div style="flex:1;"><div style="position:relative;z-index:1;width:26px;height:26px;border-radius:50%;background:#AA9C56;color:#fff;display:flex;align-items:center;justify-content:center;font-family:'Albert Sans',sans-serif;font-weight:600;font-size:14px;">2</div></div>
+        <div style="flex:1;"><div style="position:relative;z-index:1;width:26px;height:26px;border-radius:50%;background:#AA9C56;color:#fff;display:flex;align-items:center;justify-content:center;font-family:'Albert Sans',sans-serif;font-weight:600;font-size:14px;">3</div></div>
       </div>
-      <div style="display: flex; gap: 38px; align-items: flex-start;">
-        <div style="flex: 1;">
-          <h3 style="font-family: 'Albert Sans', sans-serif; font-weight: 600; font-size: 21px; color: #1a1413; margin: 0 0 10px;">1–2 Weeks After Surgery</h3>
-          <p style="font-family: 'Albert Sans', sans-serif; font-size: 17px; line-height: 1.55; color: #5a524d; margin: 0;">In the early days, you'll usually start with a lightweight temporary form, soft fiberfill or foam. It's gentle on healing tissue and restores shape under clothing while you recover.</p>
+      <!-- Text columns -->
+      <div class="recovery-cols" style="display:flex;gap:38px;align-items:flex-start;">
+        <div style="flex:1;">
+          <h3 style="font-family:'Albert Sans',sans-serif;font-weight:600;font-size:21px;color:#1a1413;margin:0 0 10px;">1–2 Weeks After Surgery</h3>
+          <p style="font-family:'Albert Sans',sans-serif;font-size:17px;line-height:1.55;color:#5a524d;margin:0;">In the early days, you'll usually start with a lightweight temporary form, soft fiberfill or foam. It's gentle on healing tissue and restores shape under clothing while you recover.</p>
         </div>
-        <div style="flex: 1;">
-          <h3 style="font-family: 'Albert Sans', sans-serif; font-weight: 600; font-size: 21px; color: #1a1413; margin: 0 0 10px;">6–8 Weeks After Surgery</h3>
-          <p style="font-family: 'Albert Sans', sans-serif; font-size: 17px; line-height: 1.55; color: #5a524d; margin: 0;">Once your surgical site has healed, swelling has settled, and your physician has cleared you, you may be ready for a long-term form. From there, a certified fitter helps you explore silicone and other options to find what fits your body, your routine, and your preferences.</p>
+        <div style="flex:1;">
+          <h3 style="font-family:'Albert Sans',sans-serif;font-weight:600;font-size:21px;color:#1a1413;margin:0 0 10px;">6–8 Weeks After Surgery</h3>
+          <p style="font-family:'Albert Sans',sans-serif;font-size:17px;line-height:1.55;color:#5a524d;margin:0;">Once your surgical site has healed, swelling has settled, and your physician has cleared you, you may be ready for a long-term form. From there, a certified fitter helps you explore silicone and other options to find what fits your body, your routine, and your preferences.</p>
         </div>
-        <div style="flex: 1;">
-          <h3 style="font-family: 'Albert Sans', sans-serif; font-weight: 600; font-size: 21px; color: #1a1413; margin: 0 0 10px;">After your fitting</h3>
-          <p style="font-family: 'Albert Sans', sans-serif; font-size: 17px; line-height: 1.55; color: #5a524d; margin: 0;">Getting used to a new form takes a little time. It should feel comfortable from the start, though. If anything rubs, shifts, or doesn't sit right, that's not something to wait out. Your body and your needs can change over time, and we're here for those check-ins for as long as you need them.</p>
+        <div style="flex:1;">
+          <h3 style="font-family:'Albert Sans',sans-serif;font-weight:600;font-size:21px;color:#1a1413;margin:0 0 10px;">After your fitting</h3>
+          <p style="font-family:'Albert Sans',sans-serif;font-size:17px;line-height:1.55;color:#5a524d;margin:0;">Getting used to a new form takes a little time. It should feel comfortable from the start, though. If anything rubs, shifts, or doesn't sit right, that's not something to wait out. Your body and your needs can change over time, and we're here for those check-ins for as long as you need them.</p>
         </div>
       </div>
     </div>
@@ -182,17 +186,74 @@
   </section>
 
   
-  <section style="background: #F8F3E5; padding: 151px 169px 113px;">
-    <div style="max-width: 1180px; margin: 0 auto; display: flex; gap: 127px; align-items: flex-start;">
-      <div style="flex: 1; display: flex; flex-direction: column; gap: 16px;">
-        <p style="font-family: 'PT Serif', Georgia, serif; font-weight: 400; font-size: 20px; line-height: 25px; color: #2A211D; margin: 0;">“As a loyal customer of P&amp;H for nearly 7 years, I can't imagine my life without their kindness, support, and top-notch products. Their staff is the most knowledgeable around, and I recommend them to anyone who needs lymphedema garments. You won't regret choosing P&amp;H!.”</p>
-        <p style="font-family: 'Albert Sans', sans-serif; font-weight: 600; font-size: 17px; color: #420C1E; margin: 0;">Anne K.</p>
-        <p style="font-family: 'Albert Sans', sans-serif; font-weight: 400; font-size: 16px; color: #7A6F69; margin: 0;">Lymphedema patient</p>
+  <!-- INSURANCE -->
+  <section style="background:#420c1e;padding:90px 83px 131px 77px;">
+    <div class="insurance-flex" style="max-width:1280px;margin:0 auto;display:flex;gap:127px;align-items:center;">
+
+      <div style="flex:0 0 380px;display:flex;flex-direction:column;gap:35px;">
+        <h2 class="serif" style="font-size:40px;line-height:1.25;font-weight:400;color:#fbf8f0;margin:0;">We're contracted with major insurance plans</h2>
+        <p style="font-family:'Albert Sans',system-ui,sans-serif;font-size:20px;line-height:1.6;color:#fbf8f0;margin:0;">Here's who we bill directly. Because coverage details still vary by policy, we verify your specific benefits before we order anything.</p>
+        <a href="assets/docs/LMN - MASTECTOMY rvsd 1.18.2024 Fill In.pdf" target="_blank" style="font-family:'Albert Sans',system-ui,sans-serif;font-size:16px;font-weight:500;color:#fff;text-decoration:underline;text-transform:uppercase;line-height:1.65;letter-spacing:0.03em;">Download documentation and<br>Rx requirements</a>
       </div>
-      <div style="flex: 1; display: flex; flex-direction: column; gap: 16px;">
-        <p style="font-family: 'PT Serif', Georgia, serif; font-weight: 400; font-size: 20px; line-height: 25px; color: #2A211D; margin: 0;">“"I've been a customer of P&amp;H for over 14 years. I have lymphedema from my waist to my toes — compression capris and knee-highs during the day, a Solaris Tribute Night garment at night. Missy Garner has managed my compression needs with precision. Her measurements are spot on, and I've never had to send anything back for resizing. She also gives me options beyond the standard nude or black — I have on lilac today. The colors help me stay compliant. I've survived 24/7 compression thanks to P&amp;H. Thank you, Missy."”</p>
-        <p style="font-family: 'Albert Sans', sans-serif; font-weight: 600; font-size: 17px; color: #420C1E; margin: 0;">Amy K</p>
-        <p style="font-family: 'Albert Sans', sans-serif; font-weight: 400; font-size: 16px; color: #7A6F69; margin: 0;">Lymphedema patient</p>
+
+      <div style="flex:1;display:flex;flex-direction:column;gap:27px;">
+
+        <div style="display:flex;flex-direction:column;gap:23px;">
+          <div style="display:flex;flex-direction:column;gap:10px;">
+            <p style="font-family:'Albert Sans',system-ui,sans-serif;font-size:22px;font-weight:600;color:#fbf8f0;margin:0;">Medicare</p>
+            <ul style="font-family:'Albert Sans',system-ui,sans-serif;font-size:20px;color:#fbf8f0;margin:0;padding-left:24px;display:flex;flex-direction:column;gap:4px;">
+              <li>Medicare Part B</li>
+              <li>[Medicare Advantage plans, listed by name]</li>
+            </ul>
+          </div>
+          <hr style="border:none;border-top:1px solid rgba(251,248,240,0.25);margin:0;">
+        </div>
+
+        <div style="display:flex;flex-direction:column;gap:23px;">
+          <div style="display:flex;flex-direction:column;gap:10px;">
+            <p style="font-family:'Albert Sans',system-ui,sans-serif;font-size:22px;font-weight:600;color:#fbf8f0;margin:0;">Medicaid</p>
+            <ul style="font-family:'Albert Sans',system-ui,sans-serif;font-size:20px;color:#fbf8f0;margin:0;padding-left:24px;display:flex;flex-direction:column;gap:4px;">
+              <li>Texas Medicaid</li>
+              <li>[Managed Medicaid plans]</li>
+            </ul>
+          </div>
+          <hr style="border:none;border-top:1px solid rgba(251,248,240,0.25);margin:0;">
+        </div>
+
+        <div style="display:flex;flex-direction:column;gap:23px;">
+          <div style="display:flex;flex-direction:column;gap:10px;">
+            <p style="font-family:'Albert Sans',system-ui,sans-serif;font-size:22px;font-weight:600;color:#fbf8f0;margin:0;">Commercial and PPO</p>
+            <ul style="font-family:'Albert Sans',system-ui,sans-serif;font-size:20px;color:#fbf8f0;margin:0;padding-left:24px;display:flex;flex-direction:column;gap:4px;">
+              <li>Aetna</li>
+              <li>Blue Cross Blue Shield of Texas</li>
+              <li>Cigna</li>
+              <li>UnitedHealthcare</li>
+              <li>[additional plans]</li>
+            </ul>
+          </div>
+          <hr style="border:none;border-top:1px solid rgba(251,248,240,0.25);margin:0;">
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="testimonials-section" style="background: #F8F3E5; padding: 120px 80px;">
+    <div class="testimonials-flex" style="display: flex; flex-direction: row; gap: 40px; align-items: flex-start;">
+      <div style="display: flex; flex-direction: column; gap: 16px; flex: 1;">
+        <p style="font-family: 'PT Serif', Georgia, serif; font-weight: 400; font-size: 20px; line-height: 25px; color: #2A211D; margin: 0;">"I am a longtime customer of P&amp;H Services and could not be happier with what they provide. The attitude and friendship we share is like a potion for the soul. I look forward to each and every meeting with Laura as the trust between us has grown. She provides all the information I need to make an educated decision concerning my mastectomy needs. Laura is a valued and integral part of my journey. P&amp;H Services is a wonderful addition to a growing part of women's awareness and assistance in that journey. I am most grateful."</p>
+        <p style="font-family: 'Albert Sans', sans-serif; font-weight: 600; font-size: 17px; color: #420C1E; margin: 0;">Jeanette S.</p>
+        <p style="font-family: 'Albert Sans', sans-serif; font-weight: 400; font-size: 16px; color: #7A6F69; margin: 0;">Mastectomy patient</p>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 16px; flex: 1;">
+        <p style="font-family: 'PT Serif', Georgia, serif; font-weight: 400; font-size: 20px; line-height: 25px; color: #2A211D; margin: 0;">"I been working with P&amp;H Services for at least 10 years and I will not go to any other company. They are very professional, friendly, knowledgeable, and actually care about their clients!!! They are like family!!! If you want a calming and personal environment I highly recommend P&amp;H Services!!!"</p>
+        <p style="font-family: 'Albert Sans', sans-serif; font-weight: 600; font-size: 17px; color: #420C1E; margin: 0;">Janice N.</p>
+        <p style="font-family: 'Albert Sans', sans-serif; font-weight: 400; font-size: 16px; color: #7A6F69; margin: 0;">Mastectomy patient</p>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 16px; flex: 1;">
+        <p style="font-family: 'PT Serif', Georgia, serif; font-weight: 400; font-size: 20px; line-height: 25px; color: #2A211D; margin: 0;">"I was diagnosed with breast cancer in April 2003 and had a bilateral mastectomy and removal of 19 lymph nodes, later developing lymphedema in my right arm. When I needed custom compression sleeves, I was told to try P&amp;H Services. I have never been more satisfied with their level of care. Wendy does a great job measuring my arm and hand to ensure my compression sleeve and glove are a perfect fit. After meeting Laura, P&amp;H's Certified Mastectomy Fitter, I made the switch for my mastectomy garments too — she always greets me with a hug and smile and takes extra special care during every visit. I do not know where I would be without the great people of P&amp;H. I am so grateful to everyone, from the receptionists and schedulers to my fitters, Laura and Wendy."</p>
+        <p style="font-family: 'Albert Sans', sans-serif; font-weight: 600; font-size: 17px; color: #420C1E; margin: 0;">Linda Williams</p>
+        <p style="font-family: 'Albert Sans', sans-serif; font-weight: 400; font-size: 16px; color: #7A6F69; margin: 0;">Mastectomy patient</p>
       </div>
     </div>
   </section>
@@ -215,7 +276,7 @@
       <div>
         <details class="accordion">
           <summary>What do I need to schedule an appointment?</summary>
-          <div class="accordion-body">To schedule an appointment, please contact our office and provide your insurance information. If you would like to use your insurance benefits, a prescription and supporting medical documentation may be required before your appointment can be confirmed. Our team will guide you through the process and let you know exactly what is needed (see our <a href="#">Rx</a> and <a href="#">Documentation Requirements</a> for more details)</div>
+          <div class="accordion-body">To schedule an appointment, please contact our office and provide your insurance information. If you would like to use your insurance benefits, a prescription and supporting medical documentation may be required before your appointment can be confirmed. Our team will guide you through the process and let you know exactly what is needed (see our <a href="assets/docs/LMN - MASTECTOMY rvsd 1.18.2024 Fill In.pdf" target="_blank">Rx</a> and <a href="assets/docs/LMN - MASTECTOMY rvsd 1.18.2024 Fill In.pdf" target="_blank">Documentation Requirements</a> for more details)</div>
         </details>
         <details class="accordion">
           <summary>What should I bring to my first fitting?</summary>
