@@ -95,7 +95,7 @@
   /* INSURANCE BANNER */
   .skyblue-bg{background:var(--skyblue);color:#fff;}
   .ins-grid{display:grid;grid-template-columns:380px 1fr;column-gap:110px;align-items:center;max-width:1440px;margin:0 auto;padding:56px 80px 56px 130px;}
-  .ins-grid h2{font-family:'PT Serif',Georgia,serif;font-size:40px;font-style:normal;font-weight:400;line-height:50px;margin:0;}
+  .ins-grid h2{font-family:'PT Serif',Georgia,serif;font-size:40px;font-style:normal;font-weight:400;line-height:48px;margin:0;}
   .ins-grid p{font-family:'Albert Sans',sans-serif;font-size:25px;font-style:normal;font-weight:500;line-height:normal;opacity:.9;}
   .ins-links{margin-top:16px;display:flex;flex-wrap:wrap;gap:32px 24px;}
   .ins-links a{font-family:'Albert Sans',sans-serif;font-size:18px;font-style:normal;font-weight:500;line-height:normal;text-transform:uppercase;}
@@ -373,7 +373,7 @@ line-height: 55px
     /* HERO (home) */
     .hero-section{padding-top:0;}
     .hero-copy{padding:60px 20px 32px;}
-    .hero-copy h1{font-size:40px;line-height:1.1;}
+    .hero-copy h1{font-size:40px;line-height:48px;}
     .hero-copy .hero-sub{font-size:20px;}
     /* Mobile collage — 3-column layout, clips on sides */
     .collage{display:block;margin-top:20px;overflow:visible;}
@@ -384,7 +384,7 @@ line-height: 55px
     .collage-row .stack img{width:105px;height:128px;border-radius:10px;object-fit:cover;}
     .hero-bottom-pad{height:28px;}
     .restoration{height:380px;margin-top:0;}
-    .restoration h2{font-size:40px;line-height:1.2;}
+    .restoration h2{font-size:40px;line-height:48px;}
 
     /* PRIVATE ROOM */
     .private-room{grid-template-columns:1fr;gap:32px;}
