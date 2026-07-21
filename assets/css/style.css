@@ -38,7 +38,8 @@
   .h3-card{font-family:'Albert Sans',sans-serif;font-weight:600;font-size:22px;line-height:1.3;}
   .wrap{max-width:var(--content);margin:0 auto;padding:0 40px;}
   .label{font-size:12px;letter-spacing:.12em;text-transform:uppercase;}
-  a{color:inherit;text-decoration:none;}
+  a{color:inherit;text-decoration:none;transition:opacity .2s ease;}
+  a:hover{opacity:.7;}
 
   /* NAV / HERO */
   .hero-section{position:relative;background:var(--aubergine);padding-top:200px;padding-bottom:0;overflow:hidden;}
@@ -50,24 +51,29 @@
   nav.headroom{will-change:transform;transition:transform .25s ease-in-out;}
   nav.headroom--pinned{transform:translateY(0);}
   nav.headroom--unpinned{transform:translateY(-100%);}
+  /* When scrolled (not at top) and pinned, the header sits over light content,
+     so switch the logo + "Medical professionals" to the dark-red variant. */
+  nav.headroom--not-top.headroom--pinned .isotype,
+  nav.headroom--not-top.headroom--pinned .nav-med{color:var(--aubergine);}
   .nav-links{display:flex;align-items:center;gap:28px;background:var(--cream);color:var(--aubergine);border-radius:999px;padding:12px 28px;font-size:14px;}
   .mobile-home{display:none !important;}
   .nav-links a:hover{color:var(--maroon);}
-  .nav-med{color:rgba(251,248,240,.85);font-size:14px;}
+  .nav-med{color:rgba(251,248,240,.85);font-size:14px;transition:color .25s ease;}
   .nav-med:hover{color:var(--salmon);}
   .isotype{
     width: 134px;
     color:var(--cream);
+    transition:color .25s ease;
   }
 
   .hero-copy{text-align:center;padding:0 40px 0;color:var(--cream);}
   .hero-copy h1{font-family:'PT Serif',Georgia,serif;font-size:60px;font-style:normal;font-weight:400;line-height:1.1;margin:0;}
   .hero-copy .hero-sub{font-family:'Albert Sans',sans-serif;font-size:25px;font-style:normal;font-weight:400;line-height:30px;margin-top:16px;}
 
-  .collage{width:100%;margin-top:100px;overflow:hidden;}
+  .collage{width:100%;margin-top:100px;overflow:hidden;transform-origin:center top;will-change:transform;}
   .collage-row{display:flex;align-items:flex-end;justify-content:center;gap:35px;}
   .collage-row img{width:513.91px;height:530.23px;object-fit:cover;border-radius:15px;flex-shrink:0;display:block;}
-  .collage-row .stack{display:flex;flex-direction:column;align-items:flex-start;gap:37px;flex-shrink:0;width:253px;height:609px;}
+  .collage-row .stack{display:flex;flex-direction:column;align-items:flex-start;gap:37px;flex-shrink:0;width:253px;height:609px;margin-bottom:60px;}
   .collage-row .stack img{width:253px;height:286px;}
   .hero-bottom-pad{height:56px;background:var(--aubergine);}
 
@@ -95,11 +101,12 @@
   .cf-section{padding-left:80px;padding-right:80px;}
   .cf-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;max-width:var(--content);margin:0 auto;align-items:start;}
   .cf-grid h2{font-family:'PT Serif',Georgia,serif;font-size:60px;font-style:normal;font-weight:400;line-height:68px;color:var(--aubergine);margin:0;}
-  .cf-grid p{margin-top:20px;max-width:420px;font-family:'Albert Sans',sans-serif;font-size:25px;font-style:normal;font-weight:400;line-height:normal;color:#4a4a4a;}
+  .cf-grid p{margin-top:20px;font-family:'Albert Sans',sans-serif;font-size:25px;font-style:normal;font-weight:400;line-height:normal;color:#4a4a4a;}
   .cf-links{margin-top:24px;display:flex;gap:32px;}
-  .cf-links a{font-family:'Albert Sans',sans-serif;font-size:18px;font-style:normal;font-weight:500;line-height:normal;text-transform:uppercase;color:var(--aubergine);}
-  .cf-items{display:grid;grid-template-columns:170px 170px;column-gap:110px;row-gap:45px;justify-self:end;}
-  .cf-items>div{max-width:170px;}
+  .cf-links a{display:inline-flex;align-items:center;gap:10px;font-family:'Albert Sans',sans-serif;font-size:18px;font-style:normal;font-weight:500;line-height:normal;text-transform:uppercase;color:var(--aubergine);}
+  .cf-links a .cf-chev{flex-shrink:0;}
+  .cf-items{display:grid;grid-template-columns:200px 200px;column-gap:110px;row-gap:45px;justify-self:end;}
+  .cf-items>div{max-width:200px;}
   .cf-items .icon{width:24px;height:24px;display:block;}
   .cf-items p{margin-top:8px;color:var(--aubergine);font-family:'PT Serif',Georgia,serif;font-size:20px;font-style:normal;font-weight:400;line-height:normal;max-width:none;}
 
@@ -214,6 +221,8 @@ line-height: 1.1
   .care-card .olive{background:var(--olive);display:flex;flex-direction:column;gap:16px;padding:55px 45px 90px;}
   .care-card .lede{margin:0;font-family:'PT Serif',Georgia,serif;font-size:35px;font-weight:400;line-height:40px;color:var(--offwhite);}
   .care-card .detail{margin:0;font-family:'Albert Sans',sans-serif;font-weight:400;font-size:25px;line-height:30px;color:var(--offwhite);}
+  .care-card .care-more{align-self:flex-start;margin-top:4px;display:inline-flex;align-items:center;gap:10px;font-family:'Albert Sans',sans-serif;font-weight:400;font-size:25px;line-height:30px;color:var(--offwhite);}
+  .care-card .care-more svg{flex-shrink:0;}
 
   /* FAQ */
   .faq-wrap{max-width:980px;margin:0 auto;}
@@ -233,7 +242,7 @@ line-height: 1.1
   details.prod-item summary::-webkit-details-marker{display:none;}
   details.prod-item summary::after{content:'+';font-size:30px;font-weight:300;color:#420c1e;line-height:1;flex-shrink:0;font-family:system-ui,sans-serif;}
   details.prod-item[open]>summary::after{content:'–';}
-  details.prod-item .prod-body{padding:0 6px 34px;max-width:760px;font-family:'Albert Sans',sans-serif;font-weight:400;font-size:20px;line-height:1.62;color:#534b47;}
+  details.prod-item .prod-body{padding:0 6px 34px;font-family:'Albert Sans',sans-serif;font-weight:400;font-size:20px;line-height:1.62;color:#534b47;}
 
   /* Educational accordion cards (mastectomy page) */
   /* Flow-based accordion: height is content-driven (never a fixed px value),
@@ -300,11 +309,11 @@ line-height: 1.1
   details.accordion summary::-webkit-details-marker{display:none;}
   details.accordion summary::after{content:'+';font-size:26px;font-weight:300;color:#420c1e;line-height:1;flex-shrink:0;}
   details.accordion[open] summary::after{content:'\2013';}
-  details.accordion .accordion-body{padding:0 6px 30px;max-width:760px;font-family:'Albert Sans',sans-serif;font-size:18px;line-height:29.16px;color:#534b47;}
+  details.accordion .accordion-body{padding:0 6px 30px;font-family:'Albert Sans',sans-serif;font-size:18px;line-height:29.16px;color:#534b47;}
   details.accordion .accordion-body a{color:inherit;text-decoration:underline;}
 
   /* ─── HAMBURGER BUTTON (hidden on desktop) ─── */
-  .nav-burger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:6px 4px;color:inherit;flex-shrink:0;}
+  .nav-burger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:6px 4px;color:inherit;flex-shrink:0;transition:color .25s ease;}
   .nav-burger span{display:block;width:22px;height:2px;background:currentColor;border-radius:2px;transition:transform .2s ease,opacity .2s ease;}
   body.nav-open .nav-burger span:nth-child(1){transform:translateY(7px) rotate(45deg);}
   body.nav-open .nav-burger span:nth-child(2){opacity:0;}
@@ -313,16 +322,20 @@ line-height: 1.1
   /* ─── MOBILE BREAKPOINT ─── */
   @media (max-width:768px){
 
-    /* NAV */
-    nav{background:var(--cream) !important;color:var(--aubergine) !important;padding:14px 20px;position:fixed;top:0;left:0;right:0;max-width:100%;}
+    /* NAV — transparent like desktop; Headroom handles hide/show + colour swap.
+       Cream background only appears when the menu is open (below). */
+    nav{padding:14px 20px;position:fixed;top:0;left:0;right:0;max-width:100%;}
     .nav-links{display:none !important;}
     .nav-med{display:none !important;}
-    .nav-burger{display:flex;}
+    .nav-burger{display:flex;color:var(--cream);}
+    /* Scrolled (not at top) + pinned → dark-red, matching desktop. */
+    nav.headroom--not-top.headroom--pinned .nav-burger{color:var(--aubergine);}
     .isotype{width:32px;}
 
     /* Mobile menu open state — expand nav full-height (avoids stacking context bugs) */
     body.nav-open{overflow:hidden;}
     body.nav-open nav{
+      background:var(--cream) !important;
       flex-wrap:wrap;
       align-items:flex-start;
       align-content:flex-start;
@@ -336,32 +349,33 @@ line-height: 1.1
       top:0;left:0;right:0;
     }
     body.nav-open nav > .isotype{flex:0 0 auto;align-self:center;color:var(--aubergine) !important;}
-    nav .isotype{color:var(--aubergine) !important;}
+    body.nav-open .nav-burger{color:var(--aubergine);}
     body.nav-open nav > .nav-burger{position:absolute;top:14px;right:20px;}
     body.nav-open .nav-links{
       display:flex !important;
       flex:0 0 100%;
       flex-direction:column;
+      align-items:stretch;
       gap:0;
       padding:0;
       margin:20px 0 0;
       border-radius:0;
       background:transparent;
       list-style:none;
-      border-top:1px solid rgba(66,12,30,.1);
     }
     body.nav-open .nav-links li{margin-right:0 !important;border-bottom:1px solid rgba(66,12,30,.1);}
     body.nav-open .mobile-home{display:block !important;}
     body.nav-open .nav-links li a{display:block;padding:18px 0;font-size:20px;color:var(--aubergine);font-family:'Albert Sans',sans-serif;text-align:center;}
     body.nav-open nav > .nav-med{
       display:block !important;
-      flex:0 0 100%;
-      padding:18px 0;
-      color:var(--aubergine) !important;
+      flex:0 0 auto;
+      margin:32px auto 0;
+      padding:16px 44px;
+      background:var(--maroon);
+      color:var(--cream) !important;
+      border-radius:999px;
       font-size:20px;
       font-family:'Albert Sans',sans-serif;
-      border-bottom:1px solid rgba(66,12,30,.1);
-      margin-top:0;
       text-align:center;
     }
 
@@ -395,7 +409,7 @@ line-height: 1.1
     .collage-row{display:flex;align-items:flex-end;justify-content:center;gap:12px;}
     .collage-row > img:first-child,.collage-row > img:last-child{display:none;}
     .collage-row > img:nth-child(3){width:200px;height:248px;border-radius:10px;flex-shrink:0;object-fit:cover;}
-    .collage-row .stack{width:105px;height:267px;gap:11px;flex-shrink:0;}
+    .collage-row .stack{width:105px;height:267px;gap:11px;flex-shrink:0;margin-bottom:26px;}
     .collage-row .stack img{width:105px;height:128px;border-radius:10px;object-fit:cover;}
     .hero-bottom-pad{height:28px;}
     .restoration{height:380px;margin-top:0;}
@@ -415,6 +429,7 @@ line-height: 1.1
     .cf-links{flex-direction:column;gap:20px;}
     .cf-links a{color:#1a1413;border-bottom-color:#1a1413;}
     .cf-items{grid-template-columns:1fr 1fr;column-gap:14px;row-gap:21px;justify-self:start;width:100%;}
+    .cf-items>div{max-width:170px;}
     .cf-items p{color:#1a1413;font-size:20px;}
 
     /* INSURANCE BANNER (skyblue) */
