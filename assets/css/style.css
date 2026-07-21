@@ -12,6 +12,10 @@
     src:url('assets/fonts/PTSerif-Bold.woff2') format('woff2');
   }
   @font-face{
+    font-family:'Albert Sans'; font-style:normal; font-weight:400; font-display:swap;
+    src:url('assets/fonts/AlbertSans-Regular.woff2') format('woff2');
+  }
+  @font-face{
     font-family:'Albert Sans'; font-style:normal; font-weight:500; font-display:swap;
     src:url('assets/fonts/AlbertSans-Medium.woff2') format('woff2');
   }
@@ -51,7 +55,7 @@
 
   .hero-copy{text-align:center;padding:0 40px 0;color:var(--cream);}
   .hero-copy h1{font-family:'PT Serif',Georgia,serif;font-size:65px;font-style:normal;font-weight:400;line-height:normal;margin:0;}
-  .hero-copy .hero-sub{font-family:'Albert Sans',sans-serif;font-size:25px;font-style:normal;font-weight:500;line-height:30px;margin-top:16px;}
+  .hero-copy .hero-sub{font-family:'Albert Sans',sans-serif;font-size:25px;font-style:normal;font-weight:400;line-height:30px;margin-top:16px;}
 
   .collage{width:100%;margin-top:100px;overflow:hidden;}
   .collage-row{display:flex;align-items:flex-end;justify-content:center;gap:35px;}
@@ -70,7 +74,7 @@
   .cream-bg{background:var(--cream);}
   .private-room{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center;max-width:var(--content);margin:0 auto;}
   .private-room h2{font-family:'PT Serif',Georgia,serif;font-size:60px;font-style:normal;font-weight:400;line-height:55px;color:var(--aubergine);margin:0;}
-  .private-room p{margin-top:20px;max-width:90%;font-family:'Albert Sans',sans-serif;font-size:25px;font-style:normal;font-weight:500;line-height:normal;color:#4a4a4a;}
+  .private-room p{margin-top:20px;max-width:90%;font-family:'Albert Sans',sans-serif;font-size:25px;font-style:normal;font-weight:400;line-height:normal;color:#4a4a4a;}
   .link-underline{margin-top:24px;display:inline-block;border-bottom:1px solid var(--aubergine);color:var(--aubergine);font-family:'Albert Sans',sans-serif;font-size:18px;font-style:normal;font-weight:500;line-height:normal;text-transform:uppercase;}
   /* Right-side image gallery bleeds ~30px past the viewport edge (clipped by the
      section's overflow) so the images sit flush and slightly cropped on the right. */
@@ -84,7 +88,7 @@
   .cf-section{padding-left:80px;padding-right:80px;}
   .cf-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;max-width:var(--content);margin:0 auto;align-items:start;}
   .cf-grid h2{font-family:'PT Serif',Georgia,serif;font-size:60px;font-style:normal;font-weight:400;line-height:70px;color:var(--aubergine);margin:0;}
-  .cf-grid p{margin-top:20px;max-width:420px;font-family:'Albert Sans',sans-serif;font-size:25px;font-style:normal;font-weight:450;line-height:normal;color:#4a4a4a;}
+  .cf-grid p{margin-top:20px;max-width:420px;font-family:'Albert Sans',sans-serif;font-size:25px;font-style:normal;font-weight:400;line-height:normal;color:#4a4a4a;}
   .cf-links{margin-top:24px;display:flex;gap:32px;}
   .cf-links a{font-family:'Albert Sans',sans-serif;font-size:18px;font-style:normal;font-weight:500;line-height:normal;text-transform:uppercase;color:var(--aubergine);}
   .cf-items{display:grid;grid-template-columns:170px 170px;column-gap:110px;row-gap:45px;justify-self:end;}
@@ -96,7 +100,7 @@
   .skyblue-bg{background:var(--skyblue);color:#fff;}
   .ins-grid{display:grid;grid-template-columns:380px 1fr;column-gap:110px;align-items:center;max-width:1440px;margin:0 auto;padding:56px 80px 56px 130px;}
   .ins-grid h2{font-family:'PT Serif',Georgia,serif;font-size:40px;font-style:normal;font-weight:400;line-height:48px;margin:0;}
-  .ins-grid p{font-family:'Albert Sans',sans-serif;font-size:25px;font-style:normal;font-weight:500;line-height:normal;opacity:.9;}
+  .ins-grid p{font-family:'Albert Sans',sans-serif;font-size:25px;font-style:normal;font-weight:400;line-height:normal;opacity:.9;}
   .ins-links{margin-top:16px;display:flex;flex-wrap:wrap;gap:32px 24px;}
   .ins-links a{font-family:'Albert Sans',sans-serif;font-size:18px;font-style:normal;font-weight:500;line-height:normal;text-transform:uppercase;}
   .ins-links a:last-child{text-decoration:underline;text-decoration-thickness:1.5px;text-underline-offset:6px;}
@@ -138,7 +142,7 @@
   font-family:'Albert Sans';
 font-size: 18px;
 font-style: normal;
-font-weight: 450;
+font-weight: 400;
 line-height: normal;
   margin: 0;
 }
@@ -201,7 +205,7 @@ line-height: 55px
   .care-card .photo h3{position:absolute;left:0;right:0;top:42.67%;margin:0;padding:0 24px;text-align:center;white-space:nowrap;color:#fff;font-family:'PT Serif',Georgia,serif;font-size:45px;font-weight:400;line-height:normal;}
   .care-card .olive{background:var(--olive);display:flex;flex-direction:column;gap:16px;padding:55px 45px 90px;}
   .care-card .lede{margin:0;font-family:'PT Serif',Georgia,serif;font-size:35px;font-weight:400;line-height:40px;color:var(--offwhite);}
-  .care-card .detail{margin:0;font-family:'Albert Sans',sans-serif;font-weight:500;font-size:25px;line-height:30px;color:var(--offwhite);}
+  .care-card .detail{margin:0;font-family:'Albert Sans',sans-serif;font-weight:400;font-size:25px;line-height:30px;color:var(--offwhite);}
 
   /* FAQ */
   .faq-wrap{max-width:980px;margin:0 auto;}
