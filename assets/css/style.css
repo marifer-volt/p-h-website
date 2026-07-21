@@ -296,7 +296,7 @@ line-height: 1.1
     .edu-card{min-height:0;}
     .edu-card summary{padding:32px 24px;font-size:30px;}
     .edu-card summary span{max-width:none;}
-    .edu-card-img{position:static;width:100%;height:auto;max-height:300px;opacity:1;}
+    .edu-card-img{position:static;width:calc(100% - 48px);margin:0 24px;border-radius:12px;height:auto;max-height:300px;opacity:1;}
     .edu-card:not([open]) .edu-card-img{display:none;}
     .edu-card-body-wrap{margin-top:0;}
     .edu-card-content{width:100%;padding:24px 24px 32px;font-size:18px;}
