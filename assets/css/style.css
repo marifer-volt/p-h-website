@@ -402,7 +402,7 @@ line-height: 1.1
     /* HERO (home) */
     .hero-section{padding-top:0;}
     .hero-copy{padding:60px 20px 32px;}
-    .hero-copy h1{font-size:40px;line-height:48px;}
+    .hero-copy h1{font-size:32px;line-height:38px;}
     .hero-copy .hero-sub{font-size:20px;}
     /* Mobile collage — 3-column layout, clips on sides */
     .collage{display:block;margin-top:20px;overflow:visible;}
@@ -413,18 +413,18 @@ line-height: 1.1
     .collage-row .stack img{width:105px;height:128px;border-radius:10px;object-fit:cover;}
     .hero-bottom-pad{height:28px;}
     .restoration{height:380px;margin-top:0;}
-    .restoration h2{font-size:36px;line-height:42px;}
+    .restoration h2{font-size:28px;line-height:34px;}
 
     /* PRIVATE ROOM */
     .private-room{grid-template-columns:1fr;gap:32px;}
-    .private-room h2{font-size:36px;line-height:42px;}
+    .private-room h2{font-size:28px;line-height:34px;}
     .private-room p{font-size:18px;max-width:100%;}
     .pr-grid{display:none;}
 
     /* CUSTOM FITTINGS */
     .cf-section{padding-left:30px;padding-right:30px;}
     .cf-grid{grid-template-columns:1fr;gap:47px;}
-    .cf-grid h2{font-size:36px;line-height:42px;color:#1a1413;}
+    .cf-grid h2{font-size:28px;line-height:34px;color:#1a1413;}
     .cf-grid p{font-size:20px;max-width:100%;color:#1a1413;}
     .cf-links{flex-direction:column;gap:20px;}
     .cf-links a{color:#1a1413;border-bottom-color:#1a1413;}
@@ -434,26 +434,26 @@ line-height: 1.1
 
     /* INSURANCE BANNER (skyblue) */
     .ins-grid{grid-template-columns:1fr;column-gap:0;padding:40px 24px;}
-    .ins-grid h2{font-size:30px;line-height:36px;}
+    .ins-grid h2{font-size:24px;line-height:29px;}
     .ins-grid p{font-size:18px;}
 
     /* MASONRY / SAFE SPACE */
     .masonary-grid-home{grid-template-columns:1fr;padding-left:0;gap:16px;}
     .masonary-grid-home-item--big{grid-column:span 1;}
-    .section-masonary-title{font-size:36px !important;line-height:42px !important;max-width:100%;padding-bottom:32px;}
-    .masonary-grid-home-item--header h3{font-size:20px !important;}
-    .masonary-grid-home-item--big h3{font-size:28px !important;}
+    .section-masonary-title{font-size:28px !important;line-height:34px !important;max-width:100%;padding-bottom:32px;}
+    .masonary-grid-home-item--header h3{font-size:16px !important;}
+    .masonary-grid-home-item--big h3{font-size:20px !important;}
     .safe-grid{grid-template-columns:1fr;}
 
     /* CARE CARDS */
     .care-grid{grid-template-columns:1fr;}
-    .care-card .photo h3{font-size:28px;}
+    .care-card .photo h3{font-size:20px;}
     .care-card .lede{font-size:25px;line-height:30px;}
     .care-card .detail{font-size:18px;line-height:24px;}
     .care-card .olive{padding:36px 24px 48px;}
 
     /* FAQ */
-    .faq-wrap h2{font-size:30px;line-height:36px;}
+    .faq-wrap h2{font-size:24px;line-height:29px;}
 
     /* FOOTER */
     .foot-wrap{flex-direction:column;gap:40px;}
@@ -493,7 +493,7 @@ line-height: 1.1
     /* INSURANCE SECTION (compression/mastectomy) */
     .insurance-flex{flex-direction:column !important;gap:40px !important;}
     .insurance-flex > div:first-child{flex:none !important;width:100% !important;}
-    .insurance-flex h2{font-size:30px !important;}
+    .insurance-flex h2{font-size:24px !important;}
     .insurance-flex p{font-size:17px !important;}
 
     /* TESTIMONIALS (compression/mastectomy) */
@@ -639,10 +639,10 @@ line-height: 1.1
     .location-cards-grid{grid-template-columns:1fr !important;margin-top:48px !important;}
 
     /* CONSOLIDATED HEADING SCALE — mobile */
-    .h1-std{font-size:40px !important;line-height:48px !important;}
-    .h2-feature{font-size:36px !important;line-height:42px !important;}
-    .h2-std{font-size:30px !important;line-height:36px !important;}
-    .h3-feature{font-size:28px !important;}
-    .h3-card{font-size:20px !important;}
+    .h1-std{font-size:32px !important;line-height:38px !important;}
+    .h2-feature{font-size:28px !important;line-height:34px !important;}
+    .h2-std{font-size:24px !important;line-height:29px !important;}
+    .h3-feature{font-size:20px !important;}
+    .h3-card{font-size:16px !important;}
 
   }
