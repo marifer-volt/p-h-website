@@ -288,3 +288,315 @@ line-height: 55px
   details.accordion[open] summary::after{content:'\2013';}
   details.accordion .accordion-body{padding:0 6px 30px;max-width:760px;font-family:'Albert Sans',sans-serif;font-size:18px;line-height:29.16px;color:#534b47;}
   details.accordion .accordion-body a{color:inherit;text-decoration:underline;}
+
+  /* ─── HAMBURGER BUTTON (hidden on desktop) ─── */
+  .nav-burger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:6px 4px;color:inherit;flex-shrink:0;}
+  .nav-burger span{display:block;width:22px;height:2px;background:currentColor;border-radius:2px;transition:transform .2s ease,opacity .2s ease;}
+  body.nav-open .nav-burger span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+  body.nav-open .nav-burger span:nth-child(2){opacity:0;}
+  body.nav-open .nav-burger span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+
+  /* ─── MOBILE BREAKPOINT ─── */
+  @media (max-width:768px){
+
+    /* NAV */
+    nav{background:var(--cream) !important;color:var(--aubergine) !important;padding:14px 20px;position:fixed;top:0;left:0;right:0;max-width:100%;}
+    .nav-links{display:none !important;}
+    .nav-med{display:none !important;}
+    .nav-burger{display:flex;}
+    .isotype{width:32px;}
+
+    /* Mobile menu open state — expand nav full-height (avoids stacking context bugs) */
+    body.nav-open{overflow:hidden;}
+    body.nav-open nav{
+      flex-wrap:wrap;
+      align-items:flex-start;
+      align-content:flex-start;
+      height:100dvh;
+      overflow-y:auto;
+      transform:none !important;
+      will-change:auto !important;
+      gap:0;
+      padding:14px 20px 32px;
+    }
+    body.nav-open nav > .isotype{flex:0 0 auto;align-self:center;color:var(--aubergine) !important;}
+    nav .isotype{color:var(--aubergine) !important;}
+    body.nav-open nav > .nav-burger{flex:0 0 auto;margin-left:auto;align-self:center;}
+    body.nav-open .nav-links{
+      display:flex !important;
+      flex:0 0 100%;
+      flex-direction:column;
+      gap:0;
+      padding:0;
+      margin:20px 0 0;
+      border-radius:0;
+      background:transparent;
+      list-style:none;
+      border-top:1px solid rgba(66,12,30,.1);
+    }
+    body.nav-open .nav-links li{margin-right:0 !important;border-bottom:1px solid rgba(66,12,30,.1);}
+    body.nav-open .nav-links li a{display:block;padding:18px 0;font-size:20px;color:var(--aubergine);font-family:'Albert Sans',sans-serif;}
+    body.nav-open nav > .nav-med{
+      display:block !important;
+      flex:0 0 100%;
+      padding:20px 0 0;
+      color:var(--aubergine) !important;
+      font-size:18px;
+      font-family:'Albert Sans',sans-serif;
+      border-top:1px solid rgba(66,12,30,.1);
+      margin-top:8px;
+    }
+
+    /* GLOBAL SECTION PADDING */
+    .section{padding:48px 20px;}
+    .wrap{padding:0 20px;}
+
+    /* HERO (home) */
+    .hero-section{padding-top:0;}
+    .hero-copy{padding:60px 20px 32px;}
+    .hero-copy h1{font-size:40px;line-height:1.1;}
+    .hero-copy .hero-sub{font-size:20px;}
+    /* Mobile collage — 3-column layout, clips on sides */
+    .collage{display:block;margin-top:20px;overflow:visible;}
+    .collage-row{display:flex;align-items:flex-end;justify-content:center;gap:12px;}
+    .collage-row > img:first-child,.collage-row > img:last-child{display:none;}
+    .collage-row > img:nth-child(3){width:200px;height:248px;border-radius:10px;flex-shrink:0;object-fit:cover;}
+    .collage-row .stack{width:105px;height:267px;gap:11px;flex-shrink:0;}
+    .collage-row .stack img{width:105px;height:128px;border-radius:10px;object-fit:cover;}
+    .hero-bottom-pad{height:28px;}
+    .restoration{height:380px;margin-top:0;}
+    .restoration h2{font-size:40px;line-height:1.2;}
+
+    /* PRIVATE ROOM */
+    .private-room{grid-template-columns:1fr;gap:32px;}
+    .private-room h2{font-size:38px;line-height:1.2;}
+    .private-room p{font-size:18px;max-width:100%;}
+    .pr-grid{display:none;}
+
+    /* CUSTOM FITTINGS */
+    .cf-grid{grid-template-columns:1fr;gap:32px;}
+    .cf-grid h2{font-size:38px;line-height:1.2;}
+    .cf-grid p{font-size:18px;max-width:100%;}
+    .cf-items{grid-template-columns:1fr 1fr;column-gap:32px;justify-self:start;width:100%;}
+
+    /* INSURANCE BANNER (skyblue) */
+    .ins-grid{grid-template-columns:1fr;column-gap:0;padding:40px 24px;}
+    .ins-grid h2{font-size:30px;line-height:1.3;}
+    .ins-grid p{font-size:18px;}
+
+    /* MASONRY / SAFE SPACE */
+    .masonary-grid-home{grid-template-columns:1fr;padding-left:0;gap:16px;}
+    .masonary-grid-home-item--big{grid-column:span 1;}
+    .section-masonary-title{font-size:36px !important;max-width:100%;padding-bottom:32px;}
+    .safe-grid{grid-template-columns:1fr;}
+
+    /* CARE CARDS */
+    .care-grid{grid-template-columns:1fr;}
+    .care-card .photo h3{font-size:32px;}
+    .care-card .lede{font-size:24px;}
+    .care-card .detail{font-size:18px;}
+    .care-card .olive{padding:36px 24px 48px;}
+
+    /* FAQ */
+    .faq-wrap h2{font-size:32px;}
+
+    /* FOOTER */
+    .foot-wrap{flex-direction:column;gap:40px;}
+    footer{padding:48px 24px 32px;}
+    footer div[style*="padding:0 179px"]{padding:0 24px !important;}
+    footer div[style*="padding:0 91px"]{padding:0 24px !important;}
+    footer .serif[style*="font-size:128px"]{font-size:60px !important;letter-spacing:-1px !important;}
+    footer div[style*="gap:56px;flex-wrap:wrap"]{flex-direction:column !important;gap:32px !important;}
+    footer div[style*="flex:1 0 300px"]{flex:none !important;min-width:0 !important;}
+    footer div[style*="gap:72px"]{gap:32px !important;}
+
+    /* BUILDING SECTION (home contact details) */
+    .building-flex{flex-direction:column !important;gap:32px !important;}
+    .building-flex > div:first-child{width:100% !important;height:260px !important;}
+    .building-flex > div:last-child{gap:24px !important;}
+    .building-flex h2{font-size:36px !important;}
+    .building-flex p{font-size:17px !important;}
+
+    /* ABOUT PAGE */
+    .about-story-grid{grid-template-columns:1fr !important;gap:32px !important;}
+    .about-story-grid > div:first-child{height:280px !important;}
+    .about-gallery-grid{grid-template-columns:1fr 1fr !important;gap:12px !important;}
+    .about-gallery-grid > div{height:220px !important;}
+    .about-exp-flex{flex-direction:column !important;gap:32px !important;}
+    .about-exp-flex h2{font-size:36px !important;width:auto !important;}
+
+    /* PHYSICIANS PAGE hero */
+    .phy-hero-flex{flex-direction:column !important;gap:40px !important;padding:100px 24px 60px !important;}
+    .phy-hero-flex > div:first-child{width:100% !important;}
+    .phy-hero-flex h1{font-size:38px !important;}
+    .phy-hero-flex p{font-size:17px !important;}
+    .phy-hero-flex > div:last-child{flex-direction:column !important;gap:16px !important;}
+    .phy-hero-flex > div:last-child > div{width:100% !important;height:200px !important;}
+    .phy-hero-flex > div:last-child > div:last-child{height:260px !important;}
+
+    /* CONTACT PAGE */
+    .location-cards-grid{grid-template-columns:1fr !important;margin-top:48px !important;}
+
+    /* INSURANCE SECTION (compression/mastectomy) */
+    .insurance-flex{flex-direction:column !important;gap:40px !important;}
+    .insurance-flex > div:first-child{flex:none !important;width:100% !important;}
+    .insurance-flex h2{font-size:30px !important;}
+    .insurance-flex p{font-size:17px !important;}
+
+    /* TESTIMONIALS (compression/mastectomy) */
+    .testimonials-flex{flex-direction:column !important;gap:32px !important;}
+    .testimonials-section{padding:60px 24px !important;}
+
+    /* RECOVERY TIMELINE (mastectomy) */
+    .recovery-timeline-circles{flex-direction:column !important;gap:0 !important;margin-bottom:0 !important;}
+    .recovery-timeline-circles > div{flex:none !important;}
+
+    /* HERO SECTIONS (compression/mastectomy full-bleed) */
+    section[style*="aspect-ratio:1440"]{aspect-ratio:auto !important;min-height:520px !important;}
+    section[style*="aspect-ratio: 1440"]{aspect-ratio:auto !important;min-height:520px !important;}
+
+    /* Inline paddings on content sections */
+    section[style*="padding:104px"]{padding:60px 20px !important;}
+    section[style*="padding: 104px"]{padding:60px 20px !important;}
+    section[style*="padding:80px 40px"]{padding:60px 20px !important;}
+    section[style*="padding:100px 80px"]{padding:60px 20px !important;}
+    section[style*="padding:90px 83px"]{padding:60px 20px 80px !important;}
+    section[style*="padding:151px"]{padding:60px 20px !important;}
+    section[style*="padding: 151px"]{padding:60px 20px !important;}
+    section[style*="padding:120px"]{padding:60px 20px !important;}
+    section[style*="padding:103px"]{padding:60px 20px !important;}
+    section[style*="padding:44px 40px"]{padding:40px 20px !important;}
+
+    /* Hero text inside full-bleed hero sections */
+    section[style*="aspect-ratio"] h1{font-size:36px !important;line-height:1.2 !important;}
+    section[style*="aspect-ratio"] p{font-size:17px !important;}
+
+    /* Recovery timeline stacked */
+    .recovery-circles{flex-direction:column !important;gap:16px !important;margin-bottom:8px !important;}
+    .recovery-circles > div{flex:none !important;}
+    .recovery-circles div[style*="position:absolute"]{display:none !important;}
+    .recovery-cols{flex-direction:column !important;gap:32px !important;}
+    .recovery-cols > div{flex:none !important;}
+
+    /* PHYSICIANS PAGE */
+
+    /* Hero: hide image collage on mobile, text-only */
+    .phy-hero-flex > div:last-child{display:none !important;}
+    .phy-hero-flex{padding:120px 24px 60px !important;}
+    .phy-hero-flex h1{font-size:35px !important;line-height:1.15 !important;}
+    .phy-hero-flex p{font-size:19px !important;}
+
+    /* "Built for the way you practice" */
+    section[style*="padding:96px 40px 0"]{padding:60px 20px 0 !important;}
+    section[style*="padding:96px 40px 0"] h2{font-size:30px !important;}
+    div[style*="width:514px;height:483px"]{width:100% !important;height:280px !important;}
+
+    /* Specialized and certified fitters */
+    section[style*="background:#fbf8f0;padding:96px 100px"]{padding:60px 20px !important;}
+    section[style*="background:#fbf8f0;padding:96px 100px"] h2{font-size:30px !important;}
+    section[style*="background:#fbf8f0"] div[style*="grid-template-columns:repeat(3"]{grid-template-columns:1fr !important;}
+
+    /* How to refer a patient */
+    section[id="refer"]{padding:60px 20px !important;}
+    section[id="refer"] h2{font-size:30px !important;}
+    section[id="refer"] div[style*="grid-template-columns:repeat(4"]{grid-template-columns:1fr !important;gap:32px !important;}
+
+    /* Insurance (blue) */
+    section[style*="background:#619deb;padding:84px 100px"]{padding:60px 20px !important;}
+    section[style*="background:#619deb;padding:84px 100px"] h2{font-size:30px !important;}
+    section[style*="background:#619deb"] div[style*="grid-template-columns:0.85fr"]{grid-template-columns:1fr !important;gap:32px !important;}
+
+    /* Forms & prescribing resources */
+    section[style*="padding:96px 40px;"]{padding:60px 20px !important;}
+    section[style*="padding:96px 40px;"] h2{font-size:30px !important;}
+    section[style*="padding:96px 40px;"] span[style*="font-size:25px"]{font-size:20px !important;}
+
+    /* Testimonials (physicians) */
+    section[style*="background:#f8f3e5;padding:96px 91px"]{padding:60px 20px !important;}
+    section[style*="background:#f8f3e5;padding:96px 91px"] h2{font-size:30px !important;}
+    section[style*="background:#f8f3e5;padding:96px 91px"] div[style*="display:flex;gap:32px"]{flex-direction:column !important;}
+    section[style*="background:#f8f3e5;padding:96px 91px"] div[style*="width:500px"]{width:100% !important;}
+
+    /* FAQ (physicians) */
+    section[style*="padding:96px 40px 112px"]{padding:60px 20px 80px !important;}
+    section[style*="padding:96px 40px 112px"] h2{font-size:30px !important;}
+
+    /* NAV — stronger override for pages with inline display:flex on nav-links */
+    nav ul.nav-links{display:none !important;}
+    body.nav-open nav ul.nav-links{display:flex !important;}
+
+    /* PRACTITIONERS SECTION (mastectomy + compression) */
+    section[style*="padding:72px 40px"]{padding:50px 20px !important;}
+    section[style*="padding: 72px 40px"]{padding:50px 20px !important;}
+    section[style*="padding:72px 40px"] div[style*="grid-template-columns"],
+    section[style*="padding: 72px 40px"] div[style*="grid-template-columns"]{
+      grid-template-columns:1fr !important;
+      gap:24px !important;
+    }
+    section[style*="padding:72px 40px"] h2,
+    section[style*="padding: 72px 40px"] h2{font-size:30px !important;line-height:1.2 !important;}
+    section[style*="padding:72px 40px"] p,
+    section[style*="padding: 72px 40px"] p{font-size:17px !important;}
+
+    /* PRODUCTS SECTION — accordion heading font size */
+    section[style*="padding:104px 40px"] .scp2 span[style*="font-size: 31px"],
+    section[style*="padding:104px 40px"] .scp2 span[style*="font-size:31px"]{font-size:22px !important;}
+    details.prod-item > summary{font-size:22px !important;}
+    details.prod-item > summary span[style*="font-size"]{font-size:22px !important;}
+
+    /* EDU CARDS SECTION padding */
+    section[style*="padding:40px 40px 80px"]{padding:40px 20px 60px !important;}
+    section[style*="padding: 40px 40px 80px"]{padding:40px 20px 60px !important;}
+
+    /* COMPRESSION — 7-step "path to compression" timeline */
+    div[style*="justify-content:space-between;align-items:center;margin-bottom:16px"],
+    div[style*="justify-content: space-between; align-items: center; margin-bottom: 16px"]{display:none !important;}
+    div[style*="justify-content:space-between;margin-bottom:52px"],
+    div[style*="justify-content: space-between; margin-bottom: 52px"]{
+      flex-direction:column !important;
+      align-items:flex-start !important;
+      gap:8px !important;
+      margin-bottom:24px !important;
+    }
+    div[style*="justify-content:space-between;margin-bottom:52px"] > div,
+    div[style*="justify-content: space-between; margin-bottom: 52px"] > div{
+      flex:none !important;
+      text-align:left !important;
+      padding-left:0 !important;
+    }
+
+    /* ─── ABOUT PAGE ─── */
+
+    /* Hero */
+    section[style*="background:#420c1e"] div[style*="padding:60px 40px"]{padding:60px 20px 70px !important;}
+    section[style*="background:#420c1e"] h1.serif{font-size:36px !important;line-height:1.15 !important;margin-bottom:20px !important;}
+    section[style*="background:#420c1e"] p{font-size:17px !important;}
+
+    /* Our Story — 2-col grid → single col */
+    .about-story-grid{grid-template-columns:1fr !important;gap:32px !important;}
+    .about-story-grid > div[style*="height:607px"]{height:280px !important;}
+    .about-story-grid h2{font-size:30px !important;}
+    .about-story-grid p{font-size:17px !important;}
+
+    /* Gallery — 4-col → 2-col */
+    .about-gallery-grid{grid-template-columns:1fr 1fr !important;gap:12px !important;}
+    .about-gallery-grid > div[style*="height:397px"]{height:200px !important;}
+
+    /* Our Experience — flex row → col, stats row → col */
+    .about-exp-flex{flex-direction:column !important;gap:32px !important;padding:0 !important;}
+    .about-exp-flex h2{font-size:30px !important;width:auto !important;}
+    .about-exp-flex div[style*="gap:44px;border-top"]{flex-direction:column !important;gap:24px !important;}
+    .about-exp-flex .serif[style*="font-size:44px"]{font-size:36px !important;}
+    section[style*="padding:120px 40px 120px"]{padding:60px 20px !important;}
+
+    /* ─── CONTACT PAGE ─── */
+
+    /* Hero / form */
+    section[style*="padding:80px 40px 96px"]{padding:60px 20px 72px !important;}
+    section[style*="padding:80px 40px 96px"] h1{font-size:44px !important;}
+    section[style*="padding:80px 40px 96px"] p{font-size:17px !important;}
+
+    /* Location cards — 2-col → 1-col */
+    .location-cards-grid{grid-template-columns:1fr !important;margin-top:48px !important;}
+
+  }
