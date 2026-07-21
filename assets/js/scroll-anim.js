@@ -27,7 +27,9 @@
   // Each section
   document.querySelectorAll('section').forEach(function (sec) {
     var kids = [].slice.call(sec.children).filter(function (c) {
-      return c.tagName !== 'NAV';
+      // Skip nav, the hero collage (own scroll transform), and the restoration
+      // banner (image stays static; only its text animates, tagged below).
+      return c.tagName !== 'NAV' && !c.classList.contains('collage') && !c.classList.contains('restoration');
     });
 
     if (kids.length > 1) {
@@ -47,7 +49,7 @@
   });
 
   // Restoration / full-bleed banner divs (not <section>)
-  document.querySelectorAll('.restoration').forEach(function (el) { tag(el, 0); });
+  document.querySelectorAll('.restoration h2').forEach(function (el) { tag(el, 0); });
 
   // Footer → fade as one unit
   tag(document.querySelector('footer'), 0);
@@ -67,7 +69,9 @@
   // Headroom.js — fixed header hides on scroll-down, shows on scroll-up.
   var header = document.querySelector('nav');
   if (header && window.Headroom) {
-    new Headroom(header).init();
+    // offset: stay in the "top" state (no dark-red swap) over the tall hero,
+    // only switch to --not-top after ~700px of scroll.
+    new Headroom(header, { offset: 700 }).init();
   }
 
   // Hamburger nav toggle
@@ -81,5 +85,32 @@
         document.body.classList.remove('nav-open');
       });
     });
+  }
+
+  // Hero collage — scroll-driven zoom, damped for smoothness.
+  var collage = document.querySelector('.collage');
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (collage && !reduce) {
+    var RANGE = 700;   // px of scroll over which the zoom ramps
+    var MAX = 0.3;     // max extra scale (1 -> 1.3)
+    var LIFT = 160;    // px the collage rises as it grows (upward drift)
+    var EASE = 0.12;   // lerp factor — lower = smoother/laggier
+    var target = 0, current = 0, rafId = null;
+    var easeOut = function (t) { return 1 - Math.pow(1 - t, 3); }; // ease-out cubic
+    var readScroll = function () {
+      var y = window.pageYOffset || document.documentElement.scrollTop || 0;
+      target = easeOut(Math.min(y, RANGE) / RANGE);
+    };
+    var tick = function () {
+      current += (target - current) * EASE;
+      if (Math.abs(target - current) < 0.0005) current = target;
+      collage.style.transform = 'translateY(' + (-current * LIFT) + 'px) scale(' + (1 + current * MAX) + ')';
+      rafId = (current !== target) ? requestAnimationFrame(tick) : null;
+    };
+    window.addEventListener('scroll', function () {
+      readScroll();
+      if (rafId === null) rafId = requestAnimationFrame(tick);
+    }, { passive: true });
+    readScroll(); current = target; tick();
   }
 })();
