@@ -364,11 +364,14 @@ line-height: 55px
 
     /* COMPRESSION TIMELINE — vertical on mobile */
     .compression-timeline-section{padding:54px 20px !important;}
+    .compression-timeline-section h2{font-size:35px !important;line-height:40px !important;margin-bottom:54px !important;}
     .compression-timeline{flex-direction:column !important;align-items:center !important;gap:0 !important;position:relative;}
     .compression-timeline::before{display:none;}
     .timeline-hline{display:none !important;}
     .timeline-step{display:flex !important;flex-direction:column;align-items:center;width:100%;padding:15px 0;gap:8px;}
     .timeline-step .timeline-num{margin:0 !important;}
+    .timeline-step .timeline-label{font-size:25px !important;}
+    .compression-timeline-section > div > p{font-size:16px !important;}
 
     /* GLOBAL SECTION PADDING */
     .section{padding:48px 20px;}
