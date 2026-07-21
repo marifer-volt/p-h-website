@@ -416,8 +416,8 @@ line-height: 55px
     /* CARE CARDS */
     .care-grid{grid-template-columns:1fr;}
     .care-card .photo h3{font-size:32px;}
-    .care-card .lede{font-size:24px;}
-    .care-card .detail{font-size:18px;}
+    .care-card .lede{font-size:25px;line-height:30px;}
+    .care-card .detail{font-size:18px;line-height:24px;}
     .care-card .olive{padding:36px 24px 48px;}
 
     /* FAQ */
