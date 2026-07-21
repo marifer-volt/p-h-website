@@ -1,0 +1,5 @@
+.vercel
+.DS_Store
+assets/.DS_Store
+assets/docs/.DS_Store
+**/.DS_Store
