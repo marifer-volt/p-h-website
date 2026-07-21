@@ -40,6 +40,7 @@
   nav.headroom--pinned{transform:translateY(0);}
   nav.headroom--unpinned{transform:translateY(-100%);}
   .nav-links{display:flex;align-items:center;gap:28px;background:var(--cream);color:var(--aubergine);border-radius:999px;padding:12px 28px;font-size:14px;}
+  .mobile-home{display:none !important;}
   .nav-links a:hover{color:var(--maroon);}
   .nav-med{color:rgba(251,248,240,.85);font-size:14px;}
   .nav-med:hover{color:var(--salmon);}
@@ -318,10 +319,11 @@ line-height: 55px
       will-change:auto !important;
       gap:0;
       padding:14px 20px 32px;
+      position:relative;
     }
     body.nav-open nav > .isotype{flex:0 0 auto;align-self:center;color:var(--aubergine) !important;}
     nav .isotype{color:var(--aubergine) !important;}
-    body.nav-open nav > .nav-burger{flex:0 0 auto;margin-left:auto;align-self:center;}
+    body.nav-open nav > .nav-burger{position:absolute;top:14px;right:20px;}
     body.nav-open .nav-links{
       display:flex !important;
       flex:0 0 100%;
@@ -335,17 +337,32 @@ line-height: 55px
       border-top:1px solid rgba(66,12,30,.1);
     }
     body.nav-open .nav-links li{margin-right:0 !important;border-bottom:1px solid rgba(66,12,30,.1);}
-    body.nav-open .nav-links li a{display:block;padding:18px 0;font-size:20px;color:var(--aubergine);font-family:'Albert Sans',sans-serif;}
+    body.nav-open .mobile-home{display:block !important;}
+    body.nav-open .nav-links li a{display:block;padding:18px 0;font-size:20px;color:var(--aubergine);font-family:'Albert Sans',sans-serif;text-align:center;}
     body.nav-open nav > .nav-med{
       display:block !important;
       flex:0 0 100%;
-      padding:20px 0 0;
+      padding:18px 0;
       color:var(--aubergine) !important;
-      font-size:18px;
+      font-size:20px;
       font-family:'Albert Sans',sans-serif;
-      border-top:1px solid rgba(66,12,30,.1);
-      margin-top:8px;
+      border-bottom:1px solid rgba(66,12,30,.1);
+      margin-top:0;
+      text-align:center;
     }
+
+    /* MASTECTOMY RECOVERY TIMELINE — mobile */
+    .recovery-circles{display:none !important;}
+    .recovery-cols h2[style*="margin: 0 0 60px"]{margin:0 0 30px !important;}
+    section:has(.recovery-circles) h2{margin-bottom:30px !important;}
+
+    /* COMPRESSION TIMELINE — vertical on mobile */
+    .compression-timeline-section{padding:54px 20px !important;}
+    .compression-timeline{flex-direction:column !important;align-items:center !important;gap:0 !important;position:relative;}
+    .compression-timeline::before{display:none;}
+    .timeline-hline{display:none !important;}
+    .timeline-step{display:flex !important;flex-direction:column;align-items:center;width:100%;padding:15px 0;gap:8px;}
+    .timeline-step .timeline-num{margin:0 !important;}
 
     /* GLOBAL SECTION PADDING */
     .section{padding:48px 20px;}
