@@ -539,7 +539,7 @@ line-height: 1.1
 
     /* "Built for the way you practice" */
     section[style*="padding:96px 40px 0"]{padding:60px 20px 0 !important;}
-    div[style*="width:514px;height:483px"]{width:100% !important;height:280px !important;}
+    .practice-photo-box{width:100% !important;height:280px !important;}
 
     /* Specialized and certified fitters */
     section[style*="background:#fbf8f0;padding:96px 100px"]{padding:60px 20px !important;}
@@ -547,7 +547,7 @@ line-height: 1.1
 
     /* How to refer a patient */
     section[id="refer"]{padding:60px 20px !important;}
-    section[id="refer"] div[style*="grid-template-columns:repeat(4"]{grid-template-columns:1fr !important;gap:32px !important;}
+    .refer-steps-grid{grid-template-columns:1fr !important;gap:32px !important;}
 
     /* Insurance (blue) */
     section[style*="background:#619deb;padding:84px 100px"]{padding:60px 20px !important;}
@@ -559,7 +559,7 @@ line-height: 1.1
 
     /* Testimonials (physicians) */
     section[style*="background:#f8f3e5;padding:96px 91px"]{padding:60px 20px !important;}
-    section[style*="background:#f8f3e5;padding:96px 91px"] div[style*="display:flex;gap:32px"]{flex-direction:column !important;}
+    .testimonials-cards-wrap{flex-direction:column !important;}
     section[style*="background:#f8f3e5;padding:96px 91px"] div[style*="width:500px"]{width:100% !important;}
 
     /* FAQ (physicians) */
@@ -620,7 +620,7 @@ line-height: 1.1
 
     /* Gallery — 4-col → 2-col */
     .about-gallery-grid{grid-template-columns:1fr 1fr !important;gap:12px !important;}
-    .about-gallery-grid > div[style*="height:397px"]{height:200px !important;}
+    .about-gallery-tile{height:200px !important;}
 
     /* Our Experience — flex row → col, stats row → col */
     .about-exp-flex{flex-direction:column !important;gap:32px !important;padding:0 !important;}
