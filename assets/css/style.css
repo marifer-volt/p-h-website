@@ -81,6 +81,7 @@
 
   /* CUSTOM FITTINGS */
   .merino-bg{background:var(--merino);}
+  .cf-section{padding-left:80px;padding-right:80px;}
   .cf-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;max-width:var(--content);margin:0 auto;align-items:start;}
   .cf-grid h2{font-family:'PT Serif',Georgia,serif;font-size:60px;font-style:normal;font-weight:400;line-height:70px;color:var(--aubergine);margin:0;}
   .cf-grid p{margin-top:20px;max-width:420px;font-family:'Albert Sans',sans-serif;font-size:25px;font-style:normal;font-weight:450;line-height:normal;color:#4a4a4a;}
@@ -392,10 +393,14 @@ line-height: 55px
     .pr-grid{display:none;}
 
     /* CUSTOM FITTINGS */
-    .cf-grid{grid-template-columns:1fr;gap:32px;}
-    .cf-grid h2{font-size:38px;line-height:1.2;}
-    .cf-grid p{font-size:18px;max-width:100%;}
-    .cf-items{grid-template-columns:1fr 1fr;column-gap:32px;justify-self:start;width:100%;}
+    .cf-section{padding-left:30px;padding-right:30px;}
+    .cf-grid{grid-template-columns:1fr;gap:47px;}
+    .cf-grid h2{font-size:35px;line-height:45px;color:#1a1413;}
+    .cf-grid p{font-size:20px;max-width:100%;color:#1a1413;}
+    .cf-links{flex-direction:column;gap:20px;}
+    .cf-links a{color:#1a1413;border-bottom-color:#1a1413;}
+    .cf-items{grid-template-columns:1fr 1fr;column-gap:14px;row-gap:21px;justify-self:start;width:100%;}
+    .cf-items p{color:#1a1413;font-size:20px;}
 
     /* INSURANCE BANNER (skyblue) */
     .ins-grid{grid-template-columns:1fr;column-gap:0;padding:40px 24px;}
