@@ -335,8 +335,9 @@ line-height: 1.1
   .stack-card-img{position:absolute;top:0;right:0;width:40%;height:100%;object-fit:cover;display:block;z-index:1;}
   .stack-card-content{position:relative;z-index:2;box-sizing:border-box;width:50%;padding:0 50px 80px;color:#fff;font-family:'Albert Sans',sans-serif;font-size:15px;line-height:1.5;}
   .stack-card-content ul{margin:0;padding-left:22px;display:flex;flex-direction:column;gap:10px;}
-  .stack-card-content p{margin:0;}
-  .stack-card-content a{display:inline-block;margin-top:22px;text-decoration:none;color:#fff;font:inherit;}
+  /* Card 1 only — its content is a paragraph + link; cards 2+ use icon groups */
+  .stack-card-content p{margin:0;font-size:20px;}
+  .stack-card-content a{display:inline-block;margin-top:22px;text-decoration:none;color:#fff;font-family:inherit;font-size:25px;}
 
   /* Icon-group variant (cards 2+): content sits left of the side photo.
      Each group = white circular icon badge + bold sans heading, with the
