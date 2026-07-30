@@ -42,7 +42,7 @@
   a:hover{opacity:.7;}
 
   /* NAV / HERO */
-  .hero-section{position:relative;background:var(--aubergine);padding-top:200px;padding-bottom:0;overflow:hidden;}
+  .hero-section{position:relative;background:var(--aubergine);padding-top:120px;padding-bottom:0;overflow:hidden;}
   /* Fixed, transparent header. Its height is reserved per page via --nav-h so
      nothing hides underneath it. */
   nav{position:fixed;top:0;left:0;right:0;z-index:1000;display:flex;align-items:center;justify-content:space-between;padding:24px 40px;max-width:var(--content);margin:0 auto;background:transparent;}
@@ -53,8 +53,18 @@
   nav.headroom--unpinned{transform:translateY(-100%);}
   /* When scrolled (not at top) and pinned, the header sits over light content,
      so switch the logo + "Medical professionals" to the dark-red variant. */
-  nav.headroom--not-top.headroom--pinned .isotype,
-  nav.headroom--not-top.headroom--pinned .nav-med{color:var(--aubergine);}
+  nav.headroom--not-top.headroom--pinned:not(.nav-home) .isotype,
+  nav.headroom--not-top.headroom--pinned:not(.nav-home) .nav-med{color:var(--aubergine);}
+  /* Homepage-only header: hidden on load and over the hero intro, slides in
+     once scrolled past the Headroom offset (~300px) and stays while scrolled.
+     Its dark-text swap is driven by .nav-ink (set in JS from the actual end
+     of the dark hero section) rather than by pin state. */
+  nav.nav-home{transform:translateY(-100%);}
+  nav.nav-home.headroom--not-top{transform:translateY(0);}
+  nav.nav-home.headroom--top{transform:translateY(-100%);}
+  nav.nav-ink .isotype,
+  nav.nav-ink .nav-med,
+  nav.nav-ink .nav-burger{color:var(--aubergine);}
   .nav-links{display:flex;align-items:center;gap:28px;background:var(--cream);color:var(--aubergine);border-radius:999px;padding:12px 28px;font-size:14px;}
   .mobile-home{display:none !important;}
   .nav-links a:hover{color:var(--maroon);}
@@ -67,6 +77,16 @@
   }
 
   .hero-copy{text-align:center;padding:0 40px 0;color:var(--cream);}
+  .hero-logo{display:flex;justify-content:center;margin-bottom:44px;}
+  .hero-logo svg{width:190px;height:auto;}
+  /* On-load hero entrance (home only) — pure CSS, runs once: logo, headline
+     and subline rise in with a small stagger. */
+  @keyframes hero-rise{from{opacity:0;transform:translateY(26px);}to{opacity:1;transform:translateY(0);}}
+  @media (prefers-reduced-motion:no-preference){
+    .hero-copy .hero-logo{animation:hero-rise .7s ease-out both;}
+    .hero-copy h1{animation:hero-rise .7s ease-out .15s both;}
+    .hero-copy .hero-sub{animation:hero-rise .7s ease-out .3s both;}
+  }
   .hero-copy h1{font-family:'PT Serif',Georgia,serif;font-size:60px;font-style:normal;font-weight:400;line-height:1.1;margin:0;}
   .hero-copy .hero-sub{font-family:'Albert Sans',sans-serif;font-size:25px;font-style:normal;font-weight:400;line-height:30px;margin-top:16px;}
 
@@ -312,6 +332,72 @@ line-height: 1.1
     .edu-card-content a{font-size:18px;}
   }
 
+  /* Stacked scroll cards (compression page) — always-open cards that pin to
+     the viewport as you scroll: each card sticks near the top and the next
+     one slides up over it. Pure CSS (position:sticky), no JS.
+     Tops are staggered 20px per card so the pinned deck shows each card's
+     rounded edge peeking above the one covering it. */
+  .stack-card{
+      position:sticky;
+      background:#AA9C56;
+      overflow:hidden;
+      border-radius:25px;
+      min-height:clamp(420px, 66vh, 640px);
+  }
+  .stack-card:nth-child(1){top:80px;z-index:1;}
+  .stack-card:nth-child(2){top:100px;z-index:2;}
+  .stack-card:nth-child(3){top:120px;z-index:3;}
+  .stack-card:nth-child(4){top:140px;z-index:4;}
+  .stack-card+.stack-card{margin-top:40px;}
+  .stack-card-title{position:relative;z-index:2;margin:0;padding:62px 50px 28px;color:#fff;font-family:'PT Serif',Georgia,serif;font-size:45px;font-weight:400;line-height:1.05;}
+  .stack-card-title span{display:block;max-width:min(600px,56%);}
+  /* Image fills the whole right side, behind the title. */
+  .stack-card-img{position:absolute;top:0;right:0;width:40%;height:100%;object-fit:cover;display:block;z-index:1;}
+  .stack-card-content{position:relative;z-index:2;box-sizing:border-box;width:50%;padding:0 50px 50px;color:#fff;font-family:'Albert Sans',sans-serif;font-size:15px;line-height:1.5;}
+  .stack-card-content ul{margin:0;padding-left:22px;display:flex;flex-direction:column;gap:10px;}
+  /* Card 1 only — its content is a paragraph + link; cards 2+ use icon groups */
+  .stack-card-content p{margin:0;font-size:20px;}
+  .stack-card-content a{display:inline-block;margin-top:22px;text-decoration:none;color:#fff;font-family:inherit;font-size:25px;}
+
+  /* Icon-group variant (cards 2+): content sits left of the side photo.
+     Each group = white circular icon badge + bold sans heading, with the
+     bullet list indented so its markers align with the heading text. */
+  .stack-card-content.stack-card-groups{width:56%;padding-top:12px;}
+  .stack-card-group+.stack-card-group{margin-top:34px;}
+  .stack-card-group-head{display:flex;align-items:center;gap:24px;}
+  .stack-card-icon{width:44px;height:44px;border-radius:50%;background:#fff;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+  .stack-card-icon svg{display:block;width:20px;height:20px;}
+  .stack-card-group-head h4{margin:0;font-family:'Albert Sans',sans-serif;font-weight:700;font-size:21px;line-height:1.2;color:#fff;}
+  .stack-card-group ul{margin:14px 0 0;padding-left:90px;gap:8px;}
+
+  /* Compact spacing — applied by scroll-anim.js when the tallest card would
+     not fit the viewport at its pinned position (short laptop screens). */
+  .stack-compact .stack-card-title{padding:36px 50px 18px;}
+  .stack-compact .stack-card-content{padding-bottom:30px;line-height:1.45;}
+  .stack-compact .stack-card-content.stack-card-groups{padding-top:4px;}
+  .stack-compact .stack-card-group+.stack-card-group{margin-top:22px;}
+  .stack-compact .stack-card-group ul{margin-top:10px;padding-left:84px;gap:5px;}
+  .stack-compact .stack-card-icon{width:38px;height:38px;}
+
+  @media (max-width:820px){
+    /* Phone viewports can't show a whole card while pinned, so the sticky
+       stacking is off here — cards scroll normally and nothing gets cut. */
+    .stack-card{position:static;min-height:0;}
+    .stack-card+.stack-card{margin-top:24px;}
+    .stack-card-title{padding:36px 24px 18px;font-size:30px;}
+    .stack-card-title span{max-width:none;}
+    .stack-card-img{position:static;width:calc(100% - 48px);margin:0 24px 8px;border-radius:12px;height:auto;max-height:300px;}
+    .stack-card-content{width:100%;padding:16px 24px 36px;font-size:16px;}
+    .stack-card-content p{font-size:17px;}
+    .stack-card-content a{margin-top:18px;font-size:19px;}
+    .stack-card-content.stack-card-groups{width:100%;padding-top:16px;}
+    .stack-card-group+.stack-card-group{margin-top:28px;}
+    .stack-card-group-head{gap:16px;}
+    .stack-card-icon{width:40px;height:40px;}
+    .stack-card-group-head h4{font-size:19px;}
+    .stack-card-group ul{margin-top:12px;padding-left:56px;}
+  }
+
   /* Working accordion (details/summary) used for FAQ + product lists */
   details.accordion{border-top:1px solid #E5DED0;}
   details.accordion summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:24px;padding:26px 6px;font-family:'Albert Sans',sans-serif;font-weight:500;font-size:21px;color:#1a1413;}
@@ -338,7 +424,7 @@ line-height: 1.1
     .nav-med{display:none !important;}
     .nav-burger{display:flex;color:var(--cream);}
     /* Scrolled (not at top) + pinned → dark-red, matching desktop. */
-    nav.headroom--not-top.headroom--pinned .nav-burger{color:var(--aubergine);}
+    nav.headroom--not-top.headroom--pinned:not(.nav-home) .nav-burger{color:var(--aubergine);}
     .isotype{width:32px;}
 
     /* Mobile menu open state — expand nav full-height (avoids stacking context bugs) */
@@ -411,6 +497,8 @@ line-height: 1.1
     /* HERO (home) */
     .hero-section{padding-top:0;}
     .hero-copy{padding:60px 20px 32px;}
+    .hero-logo{margin-bottom:30px;}
+    .hero-logo svg{width:132px;}
     .hero-copy h1{font-size:32px;line-height:38px;}
     .hero-copy .hero-sub{font-size:20px;}
     /* Mobile collage — 3-column layout, clips on sides */

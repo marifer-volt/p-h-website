@@ -26,6 +26,11 @@
 
   // Each section
   document.querySelectorAll('section').forEach(function (sec) {
+    // Stacked scroll cards run their own sticky effect — no entrance fade.
+    if (sec.querySelector('.stack-card')) return;
+    // Home hero animates once on load via CSS keyframes (style.css) — the
+    // scroll-triggered fade would double-animate it.
+    if (sec.classList.contains('hero-section')) return;
     var kids = [].slice.call(sec.children).filter(function (c) {
       // Skip nav, the hero collage (own scroll transform), and the restoration
       // banner (image stays static; only its text animates, tagged below).
@@ -54,24 +59,89 @@
   // Footer → fade as one unit
   tag(document.querySelector('footer'), 0);
 
-  // Exclusive accordion (.edu-card): opening one closes its siblings, but a
-  // card can still be closed by clicking it (standard accordion behaviour).
-  document.querySelectorAll('.edu-card').forEach(function (card) {
+  // Exclusive accordions: opening one closes its siblings, so only one item
+  // in a group is open at a time (an open item can still be clicked closed).
+  // Groups inside a [data-accordion-multi] container (the FAQ page) opt out
+  // and allow several items open at once.
+  document.querySelectorAll('details').forEach(function (card) {
+    if (card.closest('[data-accordion-multi]')) return;
     card.addEventListener('toggle', function () {
       if (!card.open) return; // only react when this card opens
-      var group = card.parentElement.querySelectorAll('.edu-card');
-      [].forEach.call(group, function (other) {
-        if (other !== card) other.removeAttribute('open');
+      [].forEach.call(card.parentElement.children, function (other) {
+        if (other !== card && other.tagName === 'DETAILS') other.removeAttribute('open');
       });
     });
   });
 
+  // Stacked scroll cards — give every card in the deck the height of the
+  // tallest one, so the sticky stack pins uniformly. Content differs per
+  // card, so this can't be done in CSS (sticky breaks inside a grid).
+  // Mobile keeps auto heights: images flow inline there and equalizing
+  // would leave large empty gaps on shorter cards.
+  var stackCards = document.querySelectorAll('.stack-card');
+  if (stackCards.length) {
+    var stackDesktop = window.matchMedia('(min-width:821px)');
+    var stackDeck = stackCards[0].parentElement;
+    var equalizeStack = function () {
+      stackDeck.classList.remove('stack-compact');
+      [].forEach.call(stackCards, function (c) { c.style.height = ''; c.style.top = ''; });
+      if (!stackDesktop.matches) return;
+      var tallest = function () {
+        var m = 0;
+        [].forEach.call(stackCards, function (c) { m = Math.max(m, c.offsetHeight); });
+        return m;
+      };
+      // Pin position must leave the whole card on screen at its peak: a card
+      // pinned at top:100px with its bottom past the viewport never reveals
+      // that content (the next card just covers it). Shift the staggered tops
+      // up as far as needed (floor 20px), and if the tallest card still can't
+      // fit, switch the deck to compact spacing and re-measure.
+      var stagger = 20, margin = 20;
+      var avail = window.innerHeight - 20 - (stackCards.length - 1) * stagger - margin;
+      var max = tallest();
+      if (max > avail) {
+        stackDeck.classList.add('stack-compact');
+        max = tallest();
+      }
+      var base = Math.max(20, Math.min(80, window.innerHeight - max - (stackCards.length - 1) * stagger - margin));
+      // Cards run to the viewport bottom while pinned (extra bottom whitespace
+      // inside the card) so no page background ever shows between the pinned
+      // card and the one scrolling in over it.
+      var height = Math.max(max, window.innerHeight - base);
+      [].forEach.call(stackCards, function (c, i) {
+        c.style.height = height + 'px';
+        c.style.top = (base + i * stagger) + 'px';
+      });
+    };
+    equalizeStack();
+    // Re-measure once webfonts finish loading (wrap points change) and on resize.
+    window.addEventListener('load', equalizeStack);
+    window.addEventListener('resize', equalizeStack);
+    if (document.fonts && document.fonts.ready) document.fonts.ready.then(equalizeStack);
+  }
+
   // Headroom.js — fixed header hides on scroll-down, shows on scroll-up.
+  // Homepage (nav-home): the header instead starts hidden and slides in once
+  // past ~300px, staying visible while scrolled (CSS keys off --top/--not-top).
   var header = document.querySelector('nav');
   if (header && window.Headroom) {
-    // offset: stay in the "top" state (no dark-red swap) over the tall hero,
-    // only switch to --not-top after ~700px of scroll.
-    new Headroom(header, { offset: 700 }).init();
+    var homeNav = header.classList.contains('nav-home');
+    // offset: on standard pages, stay in the "top" state (no dark-red swap)
+    // over the tall hero; on the homepage it's the ~300px reveal point.
+    new Headroom(header, { offset: homeNav ? 300 : 700 }).init();
+    if (homeNav) {
+      // The dark-red text swap can't key off pin state here (the header is
+      // shown while scrolling down too), so toggle it from where the dark
+      // hero section actually ends.
+      var heroSec = document.querySelector('.hero-section');
+      var inkNav = function () {
+        var darkEnd = heroSec ? heroSec.offsetTop + heroSec.offsetHeight : 0;
+        header.classList.toggle('nav-ink', window.scrollY > darkEnd - 90);
+      };
+      inkNav();
+      window.addEventListener('scroll', inkNav, { passive: true });
+      window.addEventListener('resize', inkNav);
+    }
   }
 
   // Hamburger nav toggle
