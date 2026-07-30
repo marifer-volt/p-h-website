@@ -76,17 +76,39 @@
   var stackCards = document.querySelectorAll('.stack-card');
   if (stackCards.length) {
     var stackDesktop = window.matchMedia('(min-width:821px)');
+    var stackDeck = stackCards[0].parentElement;
     var equalizeStack = function () {
-      [].forEach.call(stackCards, function (c) { c.style.height = ''; });
+      stackDeck.classList.remove('stack-compact');
+      [].forEach.call(stackCards, function (c) { c.style.height = ''; c.style.top = ''; });
       if (!stackDesktop.matches) return;
-      var max = 0;
-      [].forEach.call(stackCards, function (c) { max = Math.max(max, c.offsetHeight); });
-      [].forEach.call(stackCards, function (c) { c.style.height = max + 'px'; });
+      var tallest = function () {
+        var m = 0;
+        [].forEach.call(stackCards, function (c) { m = Math.max(m, c.offsetHeight); });
+        return m;
+      };
+      // Pin position must leave the whole card on screen at its peak: a card
+      // pinned at top:100px with its bottom past the viewport never reveals
+      // that content (the next card just covers it). Shift the staggered tops
+      // up as far as needed (floor 20px), and if the tallest card still can't
+      // fit, switch the deck to compact spacing and re-measure.
+      var stagger = 20, margin = 20;
+      var avail = window.innerHeight - 20 - (stackCards.length - 1) * stagger - margin;
+      var max = tallest();
+      if (max > avail) {
+        stackDeck.classList.add('stack-compact');
+        max = tallest();
+      }
+      var base = Math.max(20, Math.min(80, window.innerHeight - max - (stackCards.length - 1) * stagger - margin));
+      [].forEach.call(stackCards, function (c, i) {
+        c.style.height = max + 'px';
+        c.style.top = (base + i * stagger) + 'px';
+      });
     };
     equalizeStack();
     // Re-measure once webfonts finish loading (wrap points change) and on resize.
     window.addEventListener('load', equalizeStack);
     window.addEventListener('resize', equalizeStack);
+    if (document.fonts && document.fonts.ready) document.fonts.ready.then(equalizeStack);
   }
 
   // Headroom.js — fixed header hides on scroll-down, shows on scroll-up.
