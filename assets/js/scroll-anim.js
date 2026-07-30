@@ -28,6 +28,9 @@
   document.querySelectorAll('section').forEach(function (sec) {
     // Stacked scroll cards run their own sticky effect — no entrance fade.
     if (sec.querySelector('.stack-card')) return;
+    // Home hero animates once on load via CSS keyframes (style.css) — the
+    // scroll-triggered fade would double-animate it.
+    if (sec.classList.contains('hero-section')) return;
     var kids = [].slice.call(sec.children).filter(function (c) {
       // Skip nav, the hero collage (own scroll transform), and the restoration
       // banner (image stays static; only its text animates, tagged below).
