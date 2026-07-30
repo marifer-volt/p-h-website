@@ -116,11 +116,27 @@
   }
 
   // Headroom.js — fixed header hides on scroll-down, shows on scroll-up.
+  // Homepage (nav-home): the header instead starts hidden and slides in once
+  // past ~300px, staying visible while scrolled (CSS keys off --top/--not-top).
   var header = document.querySelector('nav');
   if (header && window.Headroom) {
-    // offset: stay in the "top" state (no dark-red swap) over the tall hero,
-    // only switch to --not-top after ~700px of scroll.
-    new Headroom(header, { offset: 700 }).init();
+    var homeNav = header.classList.contains('nav-home');
+    // offset: on standard pages, stay in the "top" state (no dark-red swap)
+    // over the tall hero; on the homepage it's the ~300px reveal point.
+    new Headroom(header, { offset: homeNav ? 300 : 700 }).init();
+    if (homeNav) {
+      // The dark-red text swap can't key off pin state here (the header is
+      // shown while scrolling down too), so toggle it from where the dark
+      // hero section actually ends.
+      var heroSec = document.querySelector('.hero-section');
+      var inkNav = function () {
+        var darkEnd = heroSec ? heroSec.offsetTop + heroSec.offsetHeight : 0;
+        header.classList.toggle('nav-ink', window.scrollY > darkEnd - 90);
+      };
+      inkNav();
+      window.addEventListener('scroll', inkNav, { passive: true });
+      window.addEventListener('resize', inkNav);
+    }
   }
 
   // Hamburger nav toggle

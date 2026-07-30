@@ -53,8 +53,18 @@
   nav.headroom--unpinned{transform:translateY(-100%);}
   /* When scrolled (not at top) and pinned, the header sits over light content,
      so switch the logo + "Medical professionals" to the dark-red variant. */
-  nav.headroom--not-top.headroom--pinned .isotype,
-  nav.headroom--not-top.headroom--pinned .nav-med{color:var(--aubergine);}
+  nav.headroom--not-top.headroom--pinned:not(.nav-home) .isotype,
+  nav.headroom--not-top.headroom--pinned:not(.nav-home) .nav-med{color:var(--aubergine);}
+  /* Homepage-only header: hidden on load and over the hero intro, slides in
+     once scrolled past the Headroom offset (~300px) and stays while scrolled.
+     Its dark-text swap is driven by .nav-ink (set in JS from the actual end
+     of the dark hero section) rather than by pin state. */
+  nav.nav-home{transform:translateY(-100%);}
+  nav.nav-home.headroom--not-top{transform:translateY(0);}
+  nav.nav-home.headroom--top{transform:translateY(-100%);}
+  nav.nav-ink .isotype,
+  nav.nav-ink .nav-med,
+  nav.nav-ink .nav-burger{color:var(--aubergine);}
   .nav-links{display:flex;align-items:center;gap:28px;background:var(--cream);color:var(--aubergine);border-radius:999px;padding:12px 28px;font-size:14px;}
   .mobile-home{display:none !important;}
   .nav-links a:hover{color:var(--maroon);}
@@ -67,6 +77,8 @@
   }
 
   .hero-copy{text-align:center;padding:0 40px 0;color:var(--cream);}
+  .hero-logo{display:flex;justify-content:center;margin-bottom:44px;}
+  .hero-logo svg{width:190px;height:auto;}
   .hero-copy h1{font-family:'PT Serif',Georgia,serif;font-size:60px;font-style:normal;font-weight:400;line-height:1.1;margin:0;}
   .hero-copy .hero-sub{font-family:'Albert Sans',sans-serif;font-size:25px;font-style:normal;font-weight:400;line-height:30px;margin-top:16px;}
 
@@ -404,7 +416,7 @@ line-height: 1.1
     .nav-med{display:none !important;}
     .nav-burger{display:flex;color:var(--cream);}
     /* Scrolled (not at top) + pinned → dark-red, matching desktop. */
-    nav.headroom--not-top.headroom--pinned .nav-burger{color:var(--aubergine);}
+    nav.headroom--not-top.headroom--pinned:not(.nav-home) .nav-burger{color:var(--aubergine);}
     .isotype{width:32px;}
 
     /* Mobile menu open state — expand nav full-height (avoids stacking context bugs) */
@@ -477,6 +489,8 @@ line-height: 1.1
     /* HERO (home) */
     .hero-section{padding-top:0;}
     .hero-copy{padding:60px 20px 32px;}
+    .hero-logo{margin-bottom:30px;}
+    .hero-logo svg{width:132px;}
     .hero-copy h1{font-size:32px;line-height:38px;}
     .hero-copy .hero-sub{font-size:20px;}
     /* Mobile collage — 3-column layout, clips on sides */
