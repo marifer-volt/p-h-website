@@ -99,8 +99,12 @@
         max = tallest();
       }
       var base = Math.max(20, Math.min(80, window.innerHeight - max - (stackCards.length - 1) * stagger - margin));
+      // Cards run to the viewport bottom while pinned (extra bottom whitespace
+      // inside the card) so no page background ever shows between the pinned
+      // card and the one scrolling in over it.
+      var height = Math.max(max, window.innerHeight - base);
       [].forEach.call(stackCards, function (c, i) {
-        c.style.height = max + 'px';
+        c.style.height = height + 'px';
         c.style.top = (base + i * stagger) + 'px';
       });
     };
