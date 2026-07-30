@@ -59,14 +59,16 @@
   // Footer → fade as one unit
   tag(document.querySelector('footer'), 0);
 
-  // Exclusive accordion (.edu-card): opening one closes its siblings, but a
-  // card can still be closed by clicking it (standard accordion behaviour).
-  document.querySelectorAll('.edu-card').forEach(function (card) {
+  // Exclusive accordions: opening one closes its siblings, so only one item
+  // in a group is open at a time (an open item can still be clicked closed).
+  // Groups inside a [data-accordion-multi] container (the FAQ page) opt out
+  // and allow several items open at once.
+  document.querySelectorAll('details').forEach(function (card) {
+    if (card.closest('[data-accordion-multi]')) return;
     card.addEventListener('toggle', function () {
       if (!card.open) return; // only react when this card opens
-      var group = card.parentElement.querySelectorAll('.edu-card');
-      [].forEach.call(group, function (other) {
-        if (other !== card) other.removeAttribute('open');
+      [].forEach.call(card.parentElement.children, function (other) {
+        if (other !== card && other.tagName === 'DETAILS') other.removeAttribute('open');
       });
     });
   });
