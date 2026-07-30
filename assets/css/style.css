@@ -329,7 +329,7 @@ line-height: 1.1
   .stack-card:nth-child(3){top:120px;z-index:3;}
   .stack-card:nth-child(4){top:140px;z-index:4;}
   .stack-card+.stack-card{margin-top:40px;}
-  .stack-card-title{position:relative;z-index:2;margin:0;padding:50px 50px 28px;color:#fff;font-family:'PT Serif',Georgia,serif;font-size:45px;font-weight:400;line-height:1.05;}
+  .stack-card-title{position:relative;z-index:2;margin:0;padding:62px 50px 28px;color:#fff;font-family:'PT Serif',Georgia,serif;font-size:45px;font-weight:400;line-height:1.05;}
   .stack-card-title span{display:block;max-width:min(600px,56%);}
   /* Image fills the whole right side, behind the title. */
   .stack-card-img{position:absolute;top:0;right:0;width:40%;height:100%;object-fit:cover;display:block;z-index:1;}
@@ -352,7 +352,7 @@ line-height: 1.1
 
   /* Compact spacing — applied by scroll-anim.js when the tallest card would
      not fit the viewport at its pinned position (short laptop screens). */
-  .stack-compact .stack-card-title{padding:28px 50px 18px;}
+  .stack-compact .stack-card-title{padding:36px 50px 18px;}
   .stack-compact .stack-card-content{padding-bottom:30px;line-height:1.45;}
   .stack-compact .stack-card-content.stack-card-groups{padding-top:4px;}
   .stack-compact .stack-card-group+.stack-card-group{margin-top:22px;}
