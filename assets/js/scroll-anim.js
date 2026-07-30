@@ -26,6 +26,8 @@
 
   // Each section
   document.querySelectorAll('section').forEach(function (sec) {
+    // Stacked scroll cards run their own sticky effect — no entrance fade.
+    if (sec.querySelector('.stack-card')) return;
     var kids = [].slice.call(sec.children).filter(function (c) {
       // Skip nav, the hero collage (own scroll transform), and the restoration
       // banner (image stays static; only its text animates, tagged below).
@@ -65,6 +67,27 @@
       });
     });
   });
+
+  // Stacked scroll cards — give every card in the deck the height of the
+  // tallest one, so the sticky stack pins uniformly. Content differs per
+  // card, so this can't be done in CSS (sticky breaks inside a grid).
+  // Mobile keeps auto heights: images flow inline there and equalizing
+  // would leave large empty gaps on shorter cards.
+  var stackCards = document.querySelectorAll('.stack-card');
+  if (stackCards.length) {
+    var stackDesktop = window.matchMedia('(min-width:821px)');
+    var equalizeStack = function () {
+      [].forEach.call(stackCards, function (c) { c.style.height = ''; });
+      if (!stackDesktop.matches) return;
+      var max = 0;
+      [].forEach.call(stackCards, function (c) { max = Math.max(max, c.offsetHeight); });
+      [].forEach.call(stackCards, function (c) { c.style.height = max + 'px'; });
+    };
+    equalizeStack();
+    // Re-measure once webfonts finish loading (wrap points change) and on resize.
+    window.addEventListener('load', equalizeStack);
+    window.addEventListener('resize', equalizeStack);
+  }
 
   // Headroom.js — fixed header hides on scroll-down, shows on scroll-up.
   var header = document.querySelector('nav');
