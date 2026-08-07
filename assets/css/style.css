@@ -264,6 +264,16 @@ line-height: 1.1
   details.prod-item[open]>summary::after{content:'–';}
   details.prod-item .prod-body{padding:0 6px 34px;font-family:'Albert Sans',sans-serif;font-weight:400;font-size:20px;line-height:1.62;color:#534b47;}
   .prod-body-cols{display:grid;grid-template-columns:1fr 1fr;gap:40px;}
+  /* Product accordion body: copy (70%) + image (30%). fr units so the gap
+     doesn't push the row past 100%. The image keeps one fixed height across
+     every panel (~4:5 portrait at this column width) rather than tracking the
+     paragraph height, which made short panels letterbox. */
+  .prod-body-media{display:grid;grid-template-columns:7fr 3fr;gap:34px;align-items:start;}
+  .prod-body-media > p{margin:0;}
+  .prod-body-media .prod-img{height:360px;border-radius:15px;overflow:hidden;background:#efe7d8;}
+  .prod-body-media .prod-img img{width:100%;height:100%;object-fit:cover;display:block;}
+  /* Placeholder state — remove once real images are dropped in. */
+  .prod-body-media .prod-img.is-placeholder{display:flex;align-items:center;justify-content:center;font-family:'Albert Sans',sans-serif;font-size:14px;letter-spacing:0.08em;text-transform:uppercase;color:#a2937c;}
 
   /* Insurance plan accordions (dark banner on compression/mastectomy) */
   .insurance-plan{border-bottom:1px solid rgba(251,248,240,0.25);padding-bottom:23px;}
@@ -320,6 +330,10 @@ line-height: 1.1
   .edu-card-content ul{margin:0;padding-left:22px;display:flex;flex-direction:column;gap:10px;}
   .edu-card-content p{margin:0;}
   .edu-card-content a{display:inline-block;margin-top:22px;text-decoration:none;color:#fff;font:inherit;}
+  /* Icon-group variant (compression cards): wider column and the smaller type
+     scale those groups were built for — the .stack-card-group-* rules below
+     still supply the badge, heading and list indent. */
+  .edu-card-content.edu-card-groups{width:56%;font-size:15px;line-height:1.5;}
 
   @media (max-width:820px){
     .edu-card{min-height:0;}
@@ -329,6 +343,7 @@ line-height: 1.1
     .edu-card:not([open]) .edu-card-img{display:none;}
     .edu-card-body-wrap{margin-top:0;}
     .edu-card-content{width:100%;padding:24px 24px 32px;font-size:18px;}
+    .edu-card-content.edu-card-groups{width:100%;font-size:16px;}
     .edu-card-content a{font-size:18px;}
   }
 
@@ -685,6 +700,10 @@ line-height: 1.1
     details.prod-item > summary{font-size:22px !important;}
     details.prod-item > summary span[style*="font-size"]{font-size:22px !important;}
     .prod-body-cols{grid-template-columns:1fr !important;gap:24px !important;}
+    /* 30% of a phone width is too narrow for the product image — stack it under
+       the copy at a fixed height instead of matching the text block. */
+    .prod-body-media{grid-template-columns:1fr !important;gap:20px !important;}
+    .prod-body-media .prod-img{height:260px;}
 
     /* EDU CARDS SECTION padding */
     section[style*="padding:40px 40px 80px"]{padding:40px 20px 60px !important;}
