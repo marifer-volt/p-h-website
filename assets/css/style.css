@@ -265,15 +265,18 @@ line-height: 1.1
   details.prod-item .prod-body{padding:0 6px 34px;font-family:'Albert Sans',sans-serif;font-weight:400;font-size:20px;line-height:1.62;color:#534b47;}
   .prod-body-cols{display:grid;grid-template-columns:1fr 1fr;gap:40px;}
   /* Product accordion body: copy (70%) + image (30%). fr units so the gap
-     doesn't push the row past 100%. The image keeps one fixed height across
-     every panel (~4:5 portrait at this column width) rather than tracking the
-     paragraph height, which made short panels letterbox. */
-  .prod-body-media{display:grid;grid-template-columns:7fr 3fr;gap:34px;align-items:start;}
+     doesn't push the row past 100%. The image stretches to match the copy
+     column's height (min 360px), so panels with extra content (e.g. subitems)
+     grow the image proportionally instead of leaving it short. */
+  .prod-body-media{display:grid;grid-template-columns:7fr 3fr;gap:34px;align-items:stretch;}
   .prod-body-media > p{margin:0;}
-  .prod-body-media .prod-img{height:360px;border-radius:15px;overflow:hidden;background:#efe7d8;}
+  .prod-body-media .prod-img{min-height:360px;border-radius:15px;overflow:hidden;background:#efe7d8;}
   .prod-body-media .prod-img img{width:100%;height:100%;object-fit:cover;display:block;}
   /* Placeholder state — remove once real images are dropped in. */
   .prod-body-media .prod-img.is-placeholder{display:flex;align-items:center;justify-content:center;font-family:'Albert Sans',sans-serif;font-size:14px;letter-spacing:0.08em;text-transform:uppercase;color:#a2937c;}
+  .prod-body-text > p:first-child{margin:0;}
+  .prod-subitem{padding:20px 0 0;margin-top:20px;border-top:1px solid #efe7d8;font-family:'Albert Sans',sans-serif;font-weight:400;font-size:17px;line-height:1.62;color:#534b47;}
+  .prod-subitem:last-child{padding-bottom:0;}
 
   /* Insurance plan accordions (dark banner on compression/mastectomy) */
   .insurance-plan{border-bottom:1px solid rgba(251,248,240,0.25);padding-bottom:23px;}
