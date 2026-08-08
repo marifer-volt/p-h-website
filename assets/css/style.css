@@ -325,7 +325,7 @@ line-height: 1.1
      the header itself stays put — only the body height + opacity animate. */
   .edu-card-body-wrap{position:relative;z-index:3;margin-top:-45px;display:grid;grid-template-rows:0fr;transition:grid-template-rows .5s ease;}
   .edu-card[open] .edu-card-body-wrap{grid-template-rows:1fr;}
-  .edu-card-content{overflow:hidden;min-height:0;box-sizing:border-box;width:50%;padding:0 50px 80px;opacity:0;transition:opacity .45s ease .12s;color:#fff;font-family:'Albert Sans',sans-serif;font-size:25px;line-height:1.4;}
+  .edu-card-content{overflow:hidden;min-height:0;box-sizing:border-box;width:50%;padding:0 50px 80px;opacity:0;transition:opacity .45s ease .12s;color:#fff;font-family:'Albert Sans',sans-serif;font-size:18px;line-height:1.4;}
   .edu-card[open] .edu-card-content{opacity:1;}
   .edu-card-content ul{margin:0;padding-left:22px;display:flex;flex-direction:column;gap:10px;}
   .edu-card-content p{margin:0;}
