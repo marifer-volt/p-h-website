@@ -68,8 +68,10 @@
   .nav-links{display:flex;align-items:center;gap:28px;background:var(--cream);color:var(--aubergine);border-radius:999px;padding:12px 28px;font-size:14px;}
   .mobile-home{display:none !important;}
   .nav-links a:hover{color:var(--maroon);}
-  .nav-med{color:rgba(251,248,240,.85);font-size:14px;transition:color .25s ease;}
-  .nav-med:hover{color:var(--salmon);}
+  .nav-med{color:var(--aubergine);background:var(--salmon);font-size:14px;font-weight:400;padding:10px 20px;border-radius:999px;transition:opacity .25s ease,background-color .25s ease,color .25s ease;}
+  .nav-med:hover{opacity:1;background:var(--aubergine);color:var(--salmon);}
+  nav.headroom--not-top.headroom--pinned:not(.nav-home) .nav-med,
+  nav.nav-ink .nav-med{color:var(--aubergine);background:var(--salmon);}
   .isotype{
     width: 134px;
     color:var(--cream);
@@ -135,9 +137,10 @@
   .ins-grid{display:grid;grid-template-columns:380px 1fr;column-gap:110px;align-items:center;max-width:1440px;margin:0 auto;padding:56px 80px 56px 130px;}
   .ins-grid h2{font-family:'PT Serif',Georgia,serif;font-size:46px;font-style:normal;font-weight:400;line-height:54px;margin:0;}
   .ins-grid p{font-family:'Albert Sans',sans-serif;font-size:25px;font-style:normal;font-weight:400;line-height:normal;opacity:.9;}
-  .ins-links{margin-top:16px;display:flex;flex-wrap:wrap;gap:32px 24px;}
-  .ins-links a{font-family:'Albert Sans',sans-serif;font-size:18px;font-style:normal;font-weight:500;line-height:normal;text-transform:uppercase;text-decoration:none;text-decoration-thickness:1.5px;text-underline-offset:6px;}
-  .ins-links a:hover{text-decoration:underline;}
+  .ins-links{margin-top:16px;display:flex;flex-direction:column;gap:14px;}
+  .ins-links a{font-family:'Albert Sans',sans-serif;font-size:16px;font-style:normal;font-weight:600;line-height:normal;text-decoration:none;display:inline-flex;align-items:center;gap:10px;width:fit-content;padding:12px 20px;border:1.5px solid #fff;border-radius:999px;background:transparent;color:#fff;transition:background-color .2s ease,color .2s ease;}
+  .ins-links a::before{content:'↓';font-size:15px;line-height:1;}
+  .ins-links a:hover{background:#fff;color:var(--skyblue);opacity:1;}
 
   /* SAFE SPACE */
   .aubergine-bg{background:var(--aubergine);color:var(--cream);}
@@ -277,7 +280,7 @@ line-height: 1.1
   /* Placeholder state — remove once real images are dropped in. */
   .prod-body-media .prod-img.is-placeholder{display:flex;align-items:center;justify-content:center;font-family:'Albert Sans',sans-serif;font-size:14px;letter-spacing:0.08em;text-transform:uppercase;color:#a2937c;}
   .prod-body-text > p:first-child{margin:0;}
-  .prod-subitem{padding:20px 0 0;margin-top:20px;border-top:1px solid #efe7d8;font-family:'Albert Sans',sans-serif;font-weight:400;font-size:17px;line-height:1.62;color:#534b47;}
+  .prod-subitem{padding:20px 0 0;margin-top:20px;border-top:1px solid #efe7d8;font-family:'Albert Sans',sans-serif;font-weight:400;font-size:20px;line-height:1.62;color:#534b47;}
   .prod-subitem:last-child{padding-bottom:0;}
 
   /* Insurance plan accordions (dark banner on compression/mastectomy) */
@@ -676,10 +679,23 @@ line-height: 1.1
     section[style*="padding:96px 40px;"]{padding:60px 20px !important;}
     section[style*="padding:96px 40px;"] span[style*="font-size:25px"]{font-size:20px !important;}
 
-    /* Testimonials (physicians) */
-    section[style*="background:#f8f3e5;padding:96px 91px"]{padding:60px 20px !important;}
-    .testimonials-cards-wrap{flex-direction:column !important;}
-    section[style*="background:#f8f3e5;padding:96px 91px"] div[style*="width:500px"]{width:100% !important;}
+    /* Testimonials (physicians) — horizontally swipeable cards */
+    section[style*="background:#f8f3e5;padding:96px 91px"]{padding:60px 0 !important;}
+    section[style*="background:#f8f3e5;padding:96px 91px"] > div{padding:0 20px;}
+    .testimonials-cards-wrap{
+      display:flex !important;
+      grid-template-columns:none !important;
+      overflow-x:auto;
+      scroll-snap-type:x mandatory;
+      -webkit-overflow-scrolling:touch;
+      gap:16px !important;
+      margin:0 -20px;
+      padding:4px 20px 16px;
+    }
+    .testimonials-cards-wrap > div{
+      flex:0 0 85%;
+      scroll-snap-align:center;
+    }
 
     /* FAQ (physicians) */
     section[style*="padding:96px 40px 112px"]{padding:60px 20px 80px !important;}
