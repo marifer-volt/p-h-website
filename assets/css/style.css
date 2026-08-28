@@ -593,9 +593,10 @@ line-height: 1.1
 
     /* ABOUT PAGE */
     .about-story-grid,.about-story-grid-2{flex-direction:column !important;gap:24px !important;}
-    .about-story-grid > div,.about-story-grid-2 > div{height:280px !important;width:100% !important;flex:none !important;}
-    .about-gallery-grid{grid-template-columns:1fr 1fr !important;gap:12px !important;}
-    .about-gallery-grid > div{height:220px !important;}
+    .about-story-grid > div,.about-story-grid-2 > div{width:100% !important;flex:none !important;height:auto !important;}
+    .about-story-grid > div:has(img),.about-story-grid-2 > div:has(img){height:280px !important;}
+    .about-gallery-grid{grid-template-columns:1fr 1fr !important;gap:12px 20px !important;}
+    .about-gallery-grid > div{height:auto !important;}
     .about-exp-flex{flex-direction:column !important;gap:32px !important;}
     .about-exp-flex h2{width:auto !important;}
 
@@ -639,6 +640,7 @@ line-height: 1.1
     section[style*="padding:120px"]{padding:60px 20px !important;}
     section[style*="padding:103px"]{padding:60px 20px !important;}
     section[style*="padding:44px 40px"]{padding:40px 20px !important;}
+    section[style*="padding:70px 40px"]{padding:40px 20px !important;}
 
     /* Hero text inside full-bleed hero sections */
     section[style*="aspect-ratio"] p{font-size:17px !important;}
