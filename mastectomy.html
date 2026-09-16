@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>P&H — Mastectomy</title>
-<link rel="stylesheet" href="assets/css/style.css?v=8">
+<link rel="stylesheet" href="assets/css/style.css?v=14">
 </head>
 <body>
 <nav>
@@ -142,8 +142,11 @@
         <div class="edu-card-body-wrap">
           <div class="edu-card-content">
             <p>A custom breast prosthesis is individually designed to fit your unique body. During your private fitting, our certified fitter uses advanced 3D scanning technology to capture the natural contours of your chest wall and body. This digital scan serves as the blueprint for skilled artisans in Germany, who carefully handcraft your silicone breast prosthesis with exceptional attention to detail. The result is a one-of-a-kind prosthesis designed specifically for your body.</p>
+            <div class="edu-more">
             <p>Each prosthesis is carefully crafted to provide an exceptional fit, enhanced comfort, and a natural appearance. Personalization options such as skin tone, shape, and nipple placement help create a prosthesis that reflects your individual anatomy and preferences.</p>
             <p>Custom breast prostheses are an excellent option for women with chest wall irregularities, significant scarring, or those seeking the highest level of personalization after breast surgery.</p>
+            </div>
+            <button type="button" class="edu-read-more" onclick="this.parentElement.classList.toggle('expanded');this.textContent=this.parentElement.classList.contains('expanded')?'Read less':'Read more...'">Read more...</button>
             <a href="contact.html">→ Schedule a fitting</a>
           </div>
         </div>
@@ -166,7 +169,7 @@
                 <li>Follow the manufacturer's care instructions.</li>
               </ul>
             </div>
-            <div class="stack-card-group">
+            <div class="stack-card-group edu-more">
               <div class="stack-card-group-head">
                 <h4>Adhesive Breast Forms &amp; Nipples</h4>
               </div>
@@ -177,7 +180,7 @@
                 <li>Store with the protective backing attached.</li>
               </ul>
             </div>
-            <div class="stack-card-group">
+            <div class="stack-card-group edu-more">
               <div class="stack-card-group-head">
                 <h4>Foam Breast Forms</h4>
               </div>
@@ -187,12 +190,13 @@
                 <li>Air dry completely before storing.</li>
               </ul>
             </div>
-            <div class="stack-card-group">
+            <div class="stack-card-group edu-more">
               <div class="stack-card-group-head">
                 <h4>Need Help?</h4>
               </div>
               <p style="margin:0;">If you have questions about caring for your breast form or think it may need to be replaced, our certified fitters are here to help.</p>
             </div>
+            <button type="button" class="edu-read-more" onclick="this.closest('.edu-card-content').classList.toggle('expanded');this.textContent=this.closest('.edu-card-content').classList.contains('expanded')?'Read less':'Read more...'">Read more...</button>
             <a href="contact.html">→ Schedule a fitting</a>
           </div>
         </div>

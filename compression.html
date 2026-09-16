@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>P&H — Compression</title>
-<link rel="stylesheet" href="assets/css/style.css?v=14">
+<link rel="stylesheet" href="assets/css/style.css?v=22">
 </head>
 <body>
 <nav>
@@ -219,8 +219,11 @@
       <div class="edu-card-body-wrap">
         <div class="edu-card-content">
           <p style="margin:0 0 20px;">Daytime compression is designed to be worn while you're awake and moving. These garments provide graduated compression to help manage swelling throughout your daily activities and are available in ready-to-wear, custom, and flat knit options.</p>
+          <div class="edu-more">
           <p style="margin:0 0 20px;">Nighttime compression is designed to be worn while you sleep or rest. Because your body is in a different position at night, these garments use textured foam, channels, or specialized construction to help maintain swelling reduction, soften fibrotic tissue, and support long-term lymphedema management while remaining comfortable enough for extended wear.</p>
           <p style="margin:0;font-style:italic;font-size:0.85em;">Many patients benefit from both daytime and nighttime compression as part of a complete treatment plan. Your certified fitter and healthcare provider will help determine which garments are appropriate for your diagnosis, lifestyle, and treatment goals.</p>
+          </div>
+          <button type="button" class="edu-read-more" onclick="this.parentElement.classList.toggle('expanded');this.textContent=this.parentElement.classList.contains('expanded')?'Read less':'Read more...'">Read more...</button>
         </div>
       </div>
     </details>
@@ -241,11 +244,13 @@
             <li>Wash elastic garments daily, Velcro garments weekly, using a mild, fragrance-free detergent and warm water to remove oils and sweat and preserve elasticity.</li>
             <li>Hand-wash when possible. Machine wash is fine in a mesh bag on delicate, cold water.</li>
             <li>No bleach, fabric softeners, Woolite, or similar.</li>
+          </ul>
+          <ul class="edu-more">
             <li>Don't wring. Air-dry away from direct heat and sunlight.</li>
             <li>Close all Velcro fasteners before washing.</li>
           </ul>
         </div>
-        <div class="stack-card-group">
+        <div class="stack-card-group edu-more">
           <div class="stack-card-group-head">
             <span class="stack-card-icon" aria-hidden="true">
               <svg style="width:100%;height:100%;" viewBox="0 0 31 31" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="15.0784" cy="15.0784" r="15.0784" fill="#FDFDFD"/><path fill-rule="evenodd" clip-rule="evenodd" d="M15.1346 8.44117C14.5865 9.41742 14.2728 10.5508 14.2728 11.7597C14.2728 15.4062 17.1268 18.3659 20.6588 18.3971C19.5449 20.3812 17.4628 21.7162 15.0781 21.7162C11.5201 21.7162 8.63574 18.7444 8.63574 15.0785C8.63574 11.4127 11.5201 8.44092 15.0781 8.44092C15.097 8.44092 15.1158 8.441 15.1346 8.44117Z" fill="#3699FF"/></svg>
@@ -258,6 +263,8 @@
             <li>Tumble dry quilted garments on permanent press with other laundry or clean tennis balls. Air-dry outer jackets.</li>
           </ul>
         </div>
+        <button type="button" class="edu-read-more" onclick="this.closest('.edu-card-content').classList.toggle('expanded');this.textContent=this.closest('.edu-card-content').classList.contains('expanded')?'Read less':'Read more...'">Read more...</button>
+        </span>
         </div>
       </div>
     </details>

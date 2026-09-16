@@ -168,6 +168,16 @@
   gap: 10px;
   border-radius: 25px;
   gap: 40px;
+  position: relative;
+}
+
+details.masonary-grid-home-item > summary{
+  cursor: default;
+  list-style: none;
+  pointer-events: none;
+}
+details.masonary-grid-home-item > summary::-webkit-details-marker{
+  display: none;
 }
 
 .masonary-grid-home-item .num {
@@ -337,6 +347,7 @@ line-height: 1.1
   .edu-card-content ul{margin:0;padding-left:22px;display:flex;flex-direction:column;gap:10px;}
   .edu-card-content p{margin:0;}
   .edu-card-content a{display:inline-block;margin-top:22px;text-decoration:none;color:#fff;font:inherit;}
+  .edu-read-more{display:none;}
   /* Icon-group variant (compression cards): wider column and the smaller type
      scale those groups were built for — the .stack-card-group-* rules below
      still supply the badge, heading and list indent. */
@@ -350,6 +361,10 @@ line-height: 1.1
     .edu-card:not([open]) .edu-card-img{display:none;}
     .edu-card-body-wrap{margin-top:0;}
     .edu-card-content{width:100%;padding:24px 24px 32px;font-size:18px;}
+    .edu-card-content .edu-more{display:none !important;}
+    .edu-card-content.expanded div.edu-more{display:block !important;}
+    .edu-card-content.expanded ul.edu-more{display:flex !important;}
+    .edu-read-more{display:block;width:fit-content;background:none;border:none;padding:0;margin:0 0 20px;color:inherit;text-decoration:underline;font:inherit;font-size:16px;cursor:pointer;}
     .edu-card-content.edu-card-groups{width:100%;font-size:16px;}
     .edu-card-content a{font-size:18px;}
   }
@@ -439,6 +454,27 @@ line-height: 1.1
   /* ─── MOBILE BREAKPOINT ─── */
   @media (max-width:768px){
 
+    /* Collapsible step cards — mobile only; desktop stays static/always-open */
+    details.masonary-grid-home-item > summary{
+      cursor: pointer;
+      pointer-events: auto;
+      padding-right: 40px;
+    }
+    details.masonary-grid-home-item > summary::after{
+      content: '+';
+      position: absolute;
+      top: 18px;
+      right: 24px;
+      font-size: 30px;
+      font-weight: 300;
+      color: #F5B6AF;
+      line-height: 1;
+      font-family: system-ui, sans-serif;
+    }
+    details.masonary-grid-home-item[open] > summary::after{
+      content: '\2013';
+    }
+
     /* NAV — transparent like desktop; Headroom handles hide/show + colour swap.
        Cream background only appears when the menu is open (below). */
     nav{padding:14px 20px;position:fixed;top:0;left:0;right:0;max-width:100%;}
@@ -501,15 +537,15 @@ line-height: 1.1
     .recovery-cols h2[style*="margin: 0 0 60px"]{margin:0 0 30px !important;}
     section:has(.recovery-circles) h2{margin-bottom:30px !important;}
 
-    /* COMPRESSION TIMELINE — vertical on mobile */
+    /* COMPRESSION TIMELINE — 2 columns on mobile */
     .compression-timeline-section{padding:54px 20px !important;}
     .compression-timeline-section h2{font-size:35px !important;line-height:40px !important;margin-bottom:54px !important;}
-    .compression-timeline{flex-direction:column !important;align-items:center !important;gap:0 !important;position:relative;}
+    .compression-timeline{display:grid !important;grid-template-columns:1fr 1fr !important;flex-wrap:unset !important;align-items:start !important;gap:32px 16px !important;position:relative;}
     .compression-timeline::before{display:none;}
     .timeline-hline{display:none !important;}
-    .timeline-step{display:flex !important;flex-direction:column;align-items:center;width:100%;padding:15px 0;gap:8px;}
+    .timeline-step{display:flex !important;flex-direction:column;align-items:center;width:100%;padding:0;gap:8px;}
     .timeline-step .timeline-num{margin:0 !important;}
-    .timeline-step .timeline-label{font-size:25px !important;}
+    .timeline-step .timeline-label{font-size:20px !important;}
     .compression-timeline-section > div > p{font-size:16px !important;}
 
     /* GLOBAL SECTION PADDING */
@@ -561,15 +597,26 @@ line-height: 1.1
     .masonary-grid-home{grid-template-columns:1fr;padding-left:0;gap:16px;}
     .masonary-grid-home-item--big{grid-column:span 1;}
     .section-masonary-title{font-size:28px !important;line-height:34px !important;max-width:100%;padding-bottom:32px;}
-    .masonary-grid-home-item--header h3{font-size:16px !important;}
+    .masonary-grid-home-item--header h3{font-size:21px !important;}
     .masonary-grid-home-item--big h3{font-size:20px !important;}
     .safe-grid{grid-template-columns:1fr;}
 
-    /* CARE CARDS */
-    .care-grid{grid-template-columns:1fr;}
+    /* CARE CARDS — horizontally swipeable on mobile */
+    .care-grid{
+      display:flex;
+      overflow-x:auto;
+      scroll-snap-type:x mandatory;
+      -webkit-overflow-scrolling:touch;
+      gap:16px;
+      margin:0 -20px;
+      padding:4px 20px 16px;
+      max-width:none;
+    }
+    .care-card{flex:0 0 85%;scroll-snap-align:center;}
     .care-card .photo h3{font-size:20px;}
     .care-card .lede{font-size:25px;line-height:30px;}
     .care-card .detail{font-size:18px;line-height:24px;}
+    .care-card .care-more{font-size:16px;line-height:22px;}
     .care-card .olive{padding:36px 24px 48px;}
 
     /* FAQ */
@@ -612,14 +659,32 @@ line-height: 1.1
     .location-cards-grid{grid-template-columns:1fr !important;margin-top:48px !important;}
 
     /* INSURANCE SECTION (compression/mastectomy) */
-    .insurance-flex{flex-direction:column !important;gap:40px !important;}
-    .insurance-flex > div:first-child{flex:none !important;width:100% !important;}
+    .insurance-flex{flex-direction:column !important;gap:40px !important;align-items:stretch !important;}
+    .insurance-flex > div{flex:none !important;width:100% !important;}
     .insurance-flex h2{font-size:24px !important;}
     .insurance-flex p{font-size:17px !important;}
 
     /* TESTIMONIALS (compression/mastectomy) */
-    .testimonials-flex{flex-direction:column !important;gap:32px !important;}
-    .testimonials-section{padding:60px 24px !important;}
+    .testimonials-section{padding:60px 0 !important;}
+    .testimonials-flex{
+      display:flex !important;
+      overflow-x:auto;
+      scroll-snap-type:x mandatory;
+      -webkit-overflow-scrolling:touch;
+      gap:16px !important;
+      padding:4px 20px 16px;
+    }
+    .testimonials-flex > div{
+      flex:0 0 85% !important;
+      scroll-snap-align:center;
+      background:#fff !important;
+      border-radius:20px !important;
+      padding:30px 26px 32px !important;
+      gap:18px !important;
+    }
+    .testimonials-flex > div > p:nth-child(1){font-size:16px !important;line-height:1.42 !important;}
+    .testimonials-flex > div > p:nth-child(2){font-size:14px !important;}
+    .testimonials-flex > div > p:nth-child(3){font-size:13px !important;}
 
     /* RECOVERY TIMELINE (mastectomy) */
     .recovery-timeline-circles{flex-direction:column !important;gap:0 !important;margin-bottom:0 !important;}
@@ -669,8 +734,19 @@ line-height: 1.1
 
     /* How to refer a patient */
     section[id="refer"]{padding:60px 50px !important;}
-    .refer-steps-grid{grid-template-columns:1fr !important;gap:32px !important;}
+    .refer-steps-grid{
+      display:flex !important;
+      grid-template-columns:none !important;
+      overflow-x:auto;
+      scroll-snap-type:x mandatory;
+      -webkit-overflow-scrolling:touch;
+      gap:16px !important;
+      padding-bottom:16px;
+    }
+    .refer-steps-grid > div{flex:0 0 280px !important;width:280px !important;scroll-snap-align:center;}
     .refer-step-num{width:40px !important;height:40px !important;font-size:16px !important;}
+    .refer-steps-grid p,.refer-steps-grid div[style*="font-size"]{font-size:14px !important;line-height:20px !important;}
+    .refer-steps-grid a{font-size:14px !important;}
 
     /* Insurance (blue) */
     section[style*="background:#619deb;padding:84px 100px"]{padding:60px 40px !important;}
