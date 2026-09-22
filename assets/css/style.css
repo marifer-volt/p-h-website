@@ -576,7 +576,7 @@ line-height: 1.1
     .private-room h2{font-size:28px;line-height:34px;}
     .private-room p{font-size:18px;max-width:100%;}
     .pr-grid{display:none;}
-    .pr-mobile-img{display:block;width:100%;border-radius:20px;object-fit:cover;max-height:420px;margin-top:8px;}
+    .pr-mobile-img{display:block;width:100%;border-radius:20px;height:auto;margin-top:8px;}
 
     /* CUSTOM FITTINGS */
     .cf-section{padding-left:30px;padding-right:30px;}
