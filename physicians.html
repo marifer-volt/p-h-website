@@ -27,6 +27,8 @@
 <!-- HERO — aubergine, 2-col: text+CTA left / image collage right -->
 <section style="background:#420c1e;color:#f8f3e5;padding-top:var(--nav-h);padding-bottom:0;">
   <div class="phy-hero-flex" style="max-width:1531px;margin:0 auto;padding:80px 91px 94px;display:flex;gap:145px;align-items:center;">
+    <!-- Mobile-only hero image above the headline -->
+    <img class="phy-hero-mobile-top" src="assets/img/Missy fitting.jpg" alt="A P&H fitter measuring a patient's leg for a compression garment">
     <!-- Left: headline + body + CTA -->
     <div style="width:636px;flex-shrink:0;display:flex;flex-direction:column;gap:21px;">
       <h1 class="serif h1-std" style="margin:0;color:#f8f3e5;">Refer with confidence.<br>We fit the rest.</h1>
@@ -139,8 +141,29 @@
         <p style="font-family:'Albert Sans',system-ui,sans-serif;font-size:17px;line-height:1.55;color:#5a524d;margin:0;">After the product arrives, we complete the fitting, educate the patient on proper wear, care, and use, and ensure they are comfortable with their new garment. We continue to support our patients after the fitting and help manage eligible reorders and replacements as their treatment continues.</p>
       </div>
     </div>
+    <div class="refer-dots" aria-hidden="true">
+      <span class="refer-dot refer-dot--active"></span>
+      <span class="refer-dot"></span>
+      <span class="refer-dot"></span>
+      <span class="refer-dot"></span>
+    </div>
   </div>
 </section>
+<script>
+(function(){
+  var grid=document.querySelector('.refer-steps-grid');
+  var dots=document.querySelectorAll('.refer-dot');
+  if(!grid||!dots.length)return;
+  function update(){
+    var card=grid.querySelector('div');
+    if(!card)return;
+    var cardW=card.offsetWidth+parseInt(getComputedStyle(grid).gap)||16;
+    var idx=Math.min(Math.round(grid.scrollLeft/cardW),dots.length-1);
+    dots.forEach(function(d,i){d.classList.toggle('refer-dot--active',i===idx);});
+  }
+  grid.addEventListener('scroll',update,{passive:true});
+})();
+</script>
 
 <!-- INFORMATION ABOUT INSURANCE — blue bg -->
 <section id="insurance" style="background:#619deb;padding:84px 100px;scroll-margin-top:var(--nav-h);">
