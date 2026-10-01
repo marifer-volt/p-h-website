@@ -2,5 +2,16 @@
   "buildCommand": null,
   "outputDirectory": ".",
   "framework": null,
-  "cleanUrls": true
+  "cleanUrls": true,
+  "rewrites": [
+    {
+      "source": "/:path*",
+      "missing": [
+        {
+          "type": "file"
+        }
+      ],
+      "destination": "/home"
+    }
+  ]
 }
