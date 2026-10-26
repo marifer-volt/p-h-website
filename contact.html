@@ -82,7 +82,18 @@
     <p style="font-family:'Albert Sans',system-ui,sans-serif;font-size:20px;line-height:1.6;color:#4a423c;margin:0 0 48px;">Book a fitting, ask a question, or tell us how we can help.<br>Our team will get back to you as soon as possible.</p>
 
     <!-- FORM -->
-    <div style="display:flex;flex-direction:column;gap:16px;text-align:left;">
+
+    <form action="https://formspree.io/f/xqpppeby" method="POST" style="display:flex;flex-direction:column;gap:16px;text-align:left;">
+      <input name="fullname" type="text" placeholder="Your name" style="width:100%;background:#f7f2e9;border:1px solid #e7decf;border-radius:12px;padding:18px 19px;font-family:'Albert Sans',system-ui,sans-serif;font-size:17px;color:#a99e8f;outline:none;box-sizing:border-box;">
+      <input name="email" type="email" placeholder="Email address" style="width:100%;background:#f7f2e9;border:1px solid #e7decf;border-radius:12px;padding:18px 19px;font-family:'Albert Sans',system-ui,sans-serif;font-size:17px;color:#a99e8f;outline:none;box-sizing:border-box;" required>
+      <input name="phone" type="tel" placeholder="Phone number" style="width:100%;background:#f7f2e9;border:1px solid #e7decf;border-radius:12px;padding:18px 19px;font-family:'Albert Sans',system-ui,sans-serif;font-size:17px;color:#a99e8f;outline:none;box-sizing:border-box;">
+      <textarea name="message" placeholder="How can we help? Let us know if this is about compression, mastectomy products, or a referral." rows="5" style="width:100%;background:#f7f2e9;border:1px solid #e7decf;border-radius:12px;padding:18px 19px;font-family:'Albert Sans',system-ui,sans-serif;font-size:17px;color:#a99e8f;outline:none;resize:none;box-sizing:border-box;min-height:130px;" required></textarea>
+      <div style="text-align:center;padding-top:10px;">
+        <button type="submit" style="background:#420c1e;color:#f8f3e5;font-family:'Albert Sans',system-ui,sans-serif;font-size:16px;font-weight:600;border:none;border-radius:40px;padding:17px 44px;cursor:pointer;">Send message</button>
+      </div>
+    </form>
+
+    <!--div style="display:flex;flex-direction:column;gap:16px;text-align:left;">
 
       <input type="text" placeholder="Your name" style="width:100%;background:#f7f2e9;border:1px solid #e7decf;border-radius:12px;padding:18px 19px;font-family:'Albert Sans',system-ui,sans-serif;font-size:17px;color:#a99e8f;outline:none;box-sizing:border-box;">
 
@@ -96,7 +107,7 @@
         <button type="submit" style="background:#420c1e;color:#f8f3e5;font-family:'Albert Sans',system-ui,sans-serif;font-size:16px;font-weight:600;border:none;border-radius:40px;padding:17px 44px;cursor:pointer;">Send message</button>
       </div>
 
-    </div>
+    </div-->
   </div>
 
   <!-- LOCATION CARDS -->
