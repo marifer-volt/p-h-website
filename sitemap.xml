@@ -1,58 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://sitemaps.org">
-  <!-- Homepage -->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://ph.services/index.html</loc>
+    <loc>https://ph.services/</loc>
     <lastmod>2026-09-29</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>1.00</priority>
   </url>
-  
-  <!-- About Us Page -->
   <url>
-    <loc>https://ph.services/about.html</loc>
+    <loc>https://ph.services/compression</loc>
     <lastmod>2026-09-29</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.80</priority>
   </url>
-
-  <!-- Compression Garments Core Page -->
   <url>
-    <loc>https://ph.services/compression.html</loc>
+    <loc>https://ph.services/mastectomy</loc>
     <lastmod>2026-09-29</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.85</priority>
   </url>
-
-  <!-- Mastectomy Products Core Page -->
   <url>
-    <loc>https://ph.services/mastectomy.html</loc>
+    <loc>https://ph.services/physicians</loc>
     <lastmod>2026-09-29</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.85</priority>
   </url>
-
-  <!-- For Practitioners Target Page -->
   <url>
-    <loc>https://ph.services/physicians.html</loc>
+    <loc>https://ph.services/about</loc>
     <lastmod>2026-09-29</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.75</priority>
   </url>
-
-  <!-- Contact Page -->
   <url>
-    <loc>https://ph.services/contact.html</loc>
+    <loc>https://ph.services/faq</loc>
     <lastmod>2026-09-29</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.80</priority>
   </url>
-
-  <!-- Frequently Asked Questions -->
   <url>
-    <loc>https://ph.services/faq.html</loc>
-    <lastmod>2026-09-29</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.70</priority>
+    <loc>https://ph.services/contact</loc>
+    <lastmod>2026-10-28</lastmod>
+  </url>
+  <url>
+    <loc>https://ph.services/articles/what-to-expect-fitting</loc>
+    <lastmod>2026-10-16</lastmod>
+  </url>
+  <url>
+    <loc>https://ph.services/articles/medicare-coverage</loc>
+    <lastmod>2026-10-16</lastmod>
   </url>
 </urlset>
