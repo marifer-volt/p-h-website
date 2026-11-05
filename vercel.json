@@ -1,16 +1,4 @@
 {
   "cleanUrls": true,
-  "trailingSlash": false,
-  "redirects": [
-    { "source": "/home", "destination": "/", "permanent": true },
-    { "source": "/faqs", "destination": "/faq", "permanent": true },
-    { "source": "/practitioners", "destination": "/physicians", "permanent": true },
-    { "source": "/patients", "destination": "/", "permanent": true },
-    { "source": "/hello-world", "destination": "/", "permanent": true },
-    { "source": "/community-activity", "destination": "/about", "permanent": true },
-    { "source": "/cart", "destination": "/", "permanent": true },
-    { "source": "/product-category/:path*", "destination": "/compression", "permanent": true },
-    { "source": "/files/LMN-COMPRESSION-CP.pdf", "destination": "/assets/docs/LMN%20-%20COMPRESSION%20Rvsd%207.14.25.pdf", "permanent": true },
-    { "source": "/files/LMN-MASTECTOMY.pdf", "destination": "/assets/docs/LMN%20-%20MASTECTOMY%20rvsd%201.18.2024%20Fill%20In.pdf", "permanent": true }
-  ]
+  "trailingSlash": false
 }
