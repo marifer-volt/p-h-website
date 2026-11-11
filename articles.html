@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- Meta Description -->
+<title>Articles & Resources | P&H Services</title>
+<meta name="description" content="Expert articles on compression therapy, post-mastectomy care, lymphedema management, and what to expect during your fitting at P&H Services.">
+<link rel="canonical" href="https://ph.services/articles">
+<link rel="icon" type="image/x-icon" sizes="32x32" href="assets/icons/favicon.ico">
+<link rel="icon" type="image/png" href="assets/icons/favicon-32x32.png">
+<link rel="icon" type="image/svg+xml" href="assets/icons/favicon.svg">
+<link rel="stylesheet" href="assets/css/style.css?v=22">
+<!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-NRL5ZPXN');</script>
+<!-- End Google Tag Manager -->
+ <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "MedicalBusiness",
+  "@id": "https://ph.services/#cedarpark",
+  "name": "P&H Services",
+  "url": "https://ph.services/",
+  "image": "https://ph.services/assets/img/ph-cedar-park.jpg",
+  "telephone": "+1-512-986-6291",
+  "faxNumber": "+1-512-986-6330",
+  "email": "reception@phservnet.com",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "11901 W. Parmer Ln. #210",
+    "addressLocality": "Cedar Park",
+    "addressRegion": "TX",
+    "postalCode": "78613",
+    "addressCountry": "US"
+  },
+  "geo": { "@type": "GeoCoordinates", "latitude": "[confirm]", "longitude": "[confirm]" },
+  "areaServed": ["Cedar Park", "Austin", "Central Texas"],
+  "openingHoursSpecification": [ "[confirm hours]" ],
+  "sameAs": ["[Google Business Profile URL]"]
+}
+</script>
+<script type="application/ld+json">
+{ "@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
+ {"@type":"ListItem","position":1,"name":"Home","item":"https://ph.services/"},
+ {"@type":"ListItem","position":2,"name":"Guides","item":"https://ph.services/articles"} ]}
+</script>
+<script type="application/ld+json">
+{ "@context":"https://schema.org","@type":"Service",
+  "serviceType":"Compression garment fitting and supply",
+  "provider":{"@id":"https://ph.services/#cedarpark"},
+  "areaServed":"Central Texas",
+  "audience":{"@type":"MedicalAudience","audienceType":"Patients and referring providers"} }
+</script>
+
+<meta property="og:type"        content="website">
+<meta property="og:title"       content="Articles & Guides | P&H Services">
+<meta property="og:description" content="Expert articles on compression therapy, post-mastectomy care, lymphedema management, and what to expect during your fitting at P&H Services.">
+<meta property="og:url"         content="https://ph.services/articles">
+<meta property="og:site_name"   content="P&H Services">
+<link rel="stylesheet" href="assets/css/style.css?v=34">
+<style>
+  /* ── Articles index page ── */
+
+  .articles-hero{
+    background:var(--aubergine);
+    padding:calc(var(--nav-h) + 64px) 40px 72px;
+    text-align:center;
+  }
+  .articles-hero h1{
+    font-family:'PT Serif',Georgia,serif;
+    font-size:52px;
+    font-weight:400;
+    color:var(--cream);
+    margin:0 0 16px;
+    line-height:1.1;
+  }
+  .articles-hero p{
+    font-family:'Albert Sans',sans-serif;
+    font-size:19px;
+    color:rgba(245,233,217,.7);
+    margin:0;
+    max-width:540px;
+    margin:0 auto;
+    line-height:1.6;
+  }
+
+  /* Filter pills */
+  .articles-filters{
+    display:flex;
+    justify-content:center;
+    gap:10px;
+    flex-wrap:wrap;
+    padding:40px 40px 0;
+    max-width:1100px;
+    margin:0 auto;
+  }
+  .filter-pill{
+    font-family:'Albert Sans',sans-serif;
+    font-size:13px;
+    font-weight:600;
+    letter-spacing:.08em;
+    text-transform:uppercase;
+    padding:8px 18px;
+    border-radius:999px;
+    border:1.5px solid #d4c8bb;
+    color:#5a524d;
+    background:transparent;
+    cursor:pointer;
+    transition:all .18s ease;
+    text-decoration:none;
+  }
+  .filter-pill:hover,
+  .filter-pill.active{
+    background:var(--aubergine);
+    border-color:var(--aubergine);
+    color:var(--cream);
+    opacity:1;
+  }
+
+  /* Articles grid */
+  .articles-section{
+    padding:48px 40px 96px;
+    max-width:1100px;
+    margin:0 auto;
+  }
+
+  /* Featured article — full-width top card */
+  .article-featured{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:0;
+    border-radius:20px;
+    overflow:hidden;
+    background:#fff;
+    border:1px solid #e8dfd3;
+    margin-bottom:48px;
+    text-decoration:none;
+    color:inherit;
+    transition:transform .2s ease,box-shadow .2s ease;
+  }
+  .article-featured:hover{transform:translateY(-3px);box-shadow:0 12px 32px rgba(66,12,30,.1);opacity:1;}
+  .article-featured img{
+    width:100%;
+    height:100%;
+    min-height:340px;
+    object-fit:cover;
+    display:block;
+  }
+  .article-featured-body{
+    padding:48px 44px;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+  }
+  .article-featured-body .article-cat{
+    font-family:'Albert Sans',sans-serif;
+    font-size:11px;
+    font-weight:700;
+    letter-spacing:.12em;
+    text-transform:uppercase;
+    color:var(--aubergine);
+    margin-bottom:14px;
+  }
+  .article-featured-body h2{
+    font-family:'PT Serif',Georgia,serif;
+    font-size:34px;
+    font-weight:400;
+    line-height:1.2;
+    color:#1a1413;
+    margin:0 0 16px;
+  }
+  .article-featured-body p{
+    font-family:'Albert Sans',sans-serif;
+    font-size:16px;
+    line-height:1.65;
+    color:#5a524d;
+    margin:0 0 28px;
+  }
+  .article-featured-body .article-meta{
+    font-family:'Albert Sans',sans-serif;
+    font-size:13px;
+    color:#8a7f78;
+    display:flex;
+    gap:12px;
+    align-items:center;
+  }
+  .article-featured-body .article-meta .dot{opacity:.4;}
+
+  /* Article grid — 3 columns */
+  .articles-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:28px;
+  }
+
+  /* Standard article card */
+  .article-card{
+    background:#fff;
+    border:1px solid #e8dfd3;
+    border-radius:18px;
+    overflow:hidden;
+    text-decoration:none;
+    color:inherit;
+    display:flex;
+    flex-direction:column;
+    transition:transform .2s ease,box-shadow .2s ease;
+  }
+  .article-card:hover{transform:translateY(-3px);box-shadow:0 8px 24px rgba(66,12,30,.1);opacity:1;}
+  .article-card img{
+    width:100%;
+    height:200px;
+    object-fit:cover;
+    display:block;
+  }
+  .article-card-body{
+    padding:24px;
+    display:flex;
+    flex-direction:column;
+    flex:1;
+  }
+  .article-cat{
+    font-family:'Albert Sans',sans-serif;
+    font-size:11px;
+    font-weight:700;
+    letter-spacing:.12em;
+    text-transform:uppercase;
+    color:var(--aubergine);
+    opacity:.7;
+    margin-bottom:10px;
+  }
+  .article-card h3{
+    font-family:'PT Serif',Georgia,serif;
+    font-size:20px;
+    font-weight:400;
+    line-height:1.35;
+    color:#1a1413;
+    margin:0 0 12px;
+    flex:1;
+  }
+  .article-card p{
+    font-family:'Albert Sans',sans-serif;
+    font-size:14px;
+    line-height:1.6;
+    color:#5a524d;
+    margin:0 0 20px;
+  }
+  .article-card-meta{
+    font-family:'Albert Sans',sans-serif;
+    font-size:12px;
+    color:#8a7f78;
+    display:flex;
+    gap:10px;
+    align-items:center;
+    margin-top:auto;
+  }
+  .article-card-meta .dot{opacity:.4;}
+
+  /* Category label pill (salmon) */
+  .cat-pill{
+    display:inline-block;
+    background:var(--salmon);
+    color:var(--aubergine);
+    font-family:'Albert Sans',sans-serif;
+    font-size:10px;
+    font-weight:700;
+    letter-spacing:.1em;
+    text-transform:uppercase;
+    padding:4px 10px;
+    border-radius:999px;
+    margin-bottom:10px;
+  }
+
+  /* ── Responsive ── */
+  @media(max-width:768px){
+    .articles-hero{padding:calc(var(--nav-h) + 40px) 20px 48px;}
+    .articles-hero h1{font-size:34px;}
+    .articles-filters{padding:28px 20px 0;}
+    .articles-section{padding:32px 20px 60px;}
+    .article-featured{grid-template-columns:1fr;}
+    .article-featured img{min-height:220px;height:220px;}
+    .article-featured-body{padding:28px 24px 32px;}
+    .article-featured-body h2{font-size:26px;}
+    .articles-grid{grid-template-columns:1fr;}
+  }
+</style>
+</head>
+<body>
+
+<!-- ══════════════════════════════════════
+     NAV
+     ══════════════════════════════════════ -->
+<nav>
+  <a href="/" class="isotype" aria-label="P&amp;H home">
+    <svg width="30" height="30" viewBox="191.63 201.15 111.13 112.7" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M282.415 224.651C278.399 220.738 265.508 229.731 258.197 236.126C261.775 225.873 262.874 215.985 253.37 209.834C248.566 206.727 243.138 206.303 238.083 208.641C234.326 210.379 230.832 214.636 230.13 218.331C229.383 222.263 230.81 226.802 233.946 230.473L234.472 231.089L235.184 230.701C235.326 230.625 238.637 228.801 237.858 227.163L236.727 224.78C234.786 220.695 236.851 216.547 239.779 214.718C243.342 212.491 247.837 212.834 250.964 215.572C255.238 219.314 256.488 226.379 253.81 231.655C248.861 241.408 248.166 251.562 251.697 262.665L242.218 265.041C247.588 246.219 238.459 231.957 215.719 223.73C214.47 223.278 213.058 223.588 212.121 224.519C198.963 237.591 194.407 255.977 199.931 273.699C205.005 289.973 218.773 302.558 235.863 306.544C239.637 307.425 243.443 307.851 247.21 307.85C264.779 307.85 281.513 298.6 290.307 283.154C301.264 263.908 298.018 239.852 282.415 224.652V224.651ZM276.012 265.199C281.731 263.201 286.012 258.847 289.573 254.542C291.451 274.339 279.795 292.993 261.588 299.174C263.068 289.275 263.3 280.496 260.134 270.746L276.012 265.199ZM271.991 257.732L258.183 261.183C256.161 252.806 256.613 238.578 278.415 230.175C284.164 235.409 286.67 241.267 288.698 248.892C283.274 253.344 277.655 256.317 271.991 257.732ZM232.666 278.593C231.672 285.451 232.3 291.244 233.908 299.296C227.569 298.141 222.45 294.188 217.863 289.92C222.019 284.923 226.774 281.282 232.665 278.593H232.666ZM234.7 268.333C226.287 271.91 219.92 278.085 215.282 287.172C200.875 270.742 200.985 246.108 215.66 230.198C224.297 233.122 231.283 238.74 235.386 246.074C237.714 252.562 237.483 260.048 234.7 268.333ZM239.402 275.663L253.63 272.231L253.679 272.425C256.013 281.636 258.029 289.593 254.093 298.18C253.422 299.643 250.932 300.846 248.038 301.105C245.145 301.365 242.637 300.622 241.654 299.215C236.638 292.028 237.892 282.458 239.402 275.662L239.402 275.663Z" fill="currentColor"/>
+    </svg>
+  </a>
+  <ul class="nav-links sans" style="display:flex;list-style:none;margin:0;padding:12px 28px;">
+    <li class="mobile-home" style="display:none;margin-right:0;"><a href="/">Home</a></li>
+    <li style="margin-right:28px;"><a href="about">About us</a></li>
+    <li style="margin-right:28px;"><a href="compression">Compression</a></li>
+    <li style="margin-right:28px;"><a href="mastectomy">Mastectomy products</a></li>
+    <li><a href="contact">Contact</a></li>
+  </ul>
+  <a href="physicians" class="nav-med sans">Medical professionals</a>
+  <button class="nav-burger" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
+</nav>
+
+<!-- ══════════════════════════════════════
+     HERO
+     ══════════════════════════════════════ -->
+<header class="articles-hero">
+  <h1>Guides &amp; Resources</h1>
+  <p>Guides and expert insights on compression therapy, post-mastectomy care, and what to expect at P&amp;H Services.</p>
+</header>
+
+<!-- ══════════════════════════════════════
+     CATEGORY FILTERS
+     ══════════════════════════════════════ -->
+<!--
+<div class="articles-filters">
+  <a href="#" class="filter-pill active">All</a>
+  <a href="#" class="filter-pill">Compression Therapy</a>
+  <a href="#" class="filter-pill">Post-Mastectomy</a>
+  <a href="#" class="filter-pill">Lymphedema</a>
+  <a href="#" class="filter-pill">Insurance &amp; Coverage</a>
+  <a href="#" class="filter-pill">Patient Stories</a>
+</div>
+-->
+
+<!-- ══════════════════════════════════════
+     ARTICLES
+     ══════════════════════════════════════ -->
+<div class="articles-section">
+
+  <!-- Featured article -->
+  <a href="articles/what-to-expect-fitting" class="article-featured">
+    <img src="assets/img/Missy fitting.jpg"
+         alt="Missy Garner, measuring a patient's leg for a compression garment">
+    <div class="article-featured-body">
+      <div class="article-cat">Compression Therapy</div>
+      <h2>What to Expect at a Compression Fitting</h2>
+      <p>
+        If your doctor or therapist has prescribed compression, the next step is getting fitted, and 
+        most people walk in not really knowing what that means. A fitting is straightforward: a certified 
+        fitter measures the affected area(s), talks through your options, and gets you into the garment your 
+        clinician prescribed...
+
+      </p>
+      <div class="article-meta">
+        <time datetime="2026-10-16">October 16, 2026</time>
+        <span class="dot">·</span>
+        <span>5 min read</span>
+      </div>
+    </div>
+  </a>
+
+  <!-- Article grid -->
+  <div class="articles-grid">
+
+    <a href="articles/medicare-coverage" class="article-card">
+      <img src="assets/img/care-lymphedema.jpg" alt="A patient with medicare on the leg">
+      <div class="article-card-body">
+        <div class="cat-pill">Compression Therapy</div>
+        <h3>Does Medicare Cover Compression Garments for Lymphedema?</h3>
+        <p>
+          Yes. Since January 1, 2024, Medicare Part B covers compression garments and related supplies...
+        </p>
+        <div class="article-card-meta">
+          <time datetime="2026-10-01">October 16, 2026</time>
+          <span class="dot">·</span>
+          <span>5 min read</span>
+        </div>
+      </div>
+    </a>
+
+  </div><!-- /.articles-grid -->
+
+</div><!-- /.articles-section -->
+
+<!-- ══════════════════════════════════════
+     FOOTER
+     ══════════════════════════════════════ -->
+<footer>
+  <div class="foot-wrap sans">
+    <div style="max-width:280px;">
+      <svg width="130" height="98" viewBox="101.1 142.65 312.26 223.99" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="P&H Services" role="img">
+        <g clip-path="url(#clip1_art_idx)">
+          <path d="M282.415 172.244C278.399 168.332 265.508 177.324 258.197 183.719C261.775 173.466 262.874 163.578 253.37 157.428C248.566 154.32 243.138 153.896 238.083 156.234C234.326 157.973 230.832 162.229 230.13 165.924C229.383 169.857 230.81 174.396 233.946 178.066L234.472 178.682L235.184 178.295C235.326 178.218 238.637 176.395 237.858 174.757L236.727 172.373C234.786 168.289 236.851 164.141 239.779 162.311C243.342 160.085 247.837 160.428 250.964 163.165C255.238 166.908 256.488 173.972 253.81 179.248C248.861 189.001 248.166 199.155 251.697 210.259L242.218 212.634C247.588 193.812 238.459 179.55 215.719 171.323C214.47 170.871 213.058 171.181 212.121 172.112C198.963 185.184 194.407 203.57 199.931 221.293C205.005 237.566 218.773 250.151 235.863 254.137C239.637 255.018 243.443 255.444 247.21 255.443C264.779 255.443 281.513 246.194 290.307 230.747C301.264 211.502 298.018 187.445 282.415 172.245V172.244ZM276.012 212.793C281.731 210.794 286.012 206.44 289.573 202.135C291.451 221.933 279.795 240.586 261.588 246.768C263.068 236.869 263.3 228.089 260.134 218.339L276.012 212.793ZM271.991 205.325L258.183 208.777C256.161 200.4 256.613 186.172 278.415 177.769C284.164 183.002 286.67 188.86 288.698 196.486C283.274 200.937 277.655 203.91 271.991 205.325ZM232.666 226.187C231.672 233.045 232.3 238.837 233.908 246.889C227.569 245.735 222.45 241.782 217.863 237.513C222.019 232.517 226.774 228.875 232.665 226.187H232.666ZM234.7 215.927C226.287 219.503 219.92 225.678 215.282 234.765C200.875 218.335 200.985 193.702 215.66 177.791C224.297 180.715 231.283 186.333 235.386 193.667C237.714 200.155 237.483 207.642 234.7 215.927ZM239.402 223.256L253.63 219.824L253.679 220.019C256.013 229.23 258.029 237.186 254.093 245.774C253.422 247.237 250.932 248.439 248.038 248.698C245.145 248.959 242.637 248.215 241.654 246.808C236.638 239.622 237.892 230.051 239.402 223.255L239.402 223.256Z" fill="currentColor"/>
+          <path d="M401.995 259.247L401.957 150.652L383.569 150.746V200.15L328.571 200.088L328.551 150.717L310.291 150.767C310.332 187.023 310.372 223.279 310.412 259.534L328.553 259.424L328.613 207.235L383.571 207.166L383.568 259.504L401.995 259.247Z" fill="currentColor"/>
+          <path d="M187.95 188.294C183.591 210.053 155.144 213.908 131.433 209.355L131.422 259.458L113.026 259.476L113.006 150.71L151.861 150.868C160.918 150.905 170.544 154.272 177.506 159.484C186.743 166.398 190.284 176.654 187.951 188.295L187.95 188.294ZM161.686 200.061C168.923 193.965 170.144 184.328 167.995 175.972C166.171 168.878 160.272 160.122 151.185 159.696L131.422 158.767L131.423 202.841C140.979 206.442 152.991 207.386 161.686 200.061Z" fill="currentColor"/>
+        </g>
+        <defs>
+          <clipPath id="clip1_art_idx">
+            <rect width="288.989" height="108.883" fill="white" transform="translate(113.005 150.652)"/>
+          </clipPath>
+        </defs>
+      </svg>
+    </div>
+    <div style="display:flex;gap:40px;">
+      <div>
+        <h4>EXPLORE</h4>
+        <ul>
+          <li><a href="about">About us</a></li>
+          <li><a href="compression">Compression</a></li>
+          <li><a href="mastectomy">Mastectomy products</a></li>
+          <li><a href="physicians">For practitioners</a></li>
+          <li><a href="contact">Contact</a></li>
+          <li><a href="articles">Guides</a></li>
+          <li><a href="faq">FAQ's</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>VISIT</h4>
+        <ul>
+          <li><a href="tel:5129866291">512-986-6291</a></li>
+          <li style="padding-top:8px;font-weight:bold;color:var(--cream);">Cedar Park Office</li>
+          <li>11901 W. Parmer Ln. #210</li>
+          <li>Cedar Park, TX 78613</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/js/headroom.min.js" defer></script>
+<script src="assets/js/scroll-anim.js?v=6" defer></script>
+</body>
+</html>
