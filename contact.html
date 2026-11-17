@@ -50,6 +50,64 @@
  {"@type":"ListItem","position":1,"name":"Home","item":"https://ph.services/"},
  {"@type":"ListItem","position":2,"name":"Contact","item":"https://ph.services/contact"} ]}
 </script>
+<style>
+  /* 1. Align the checkbox and label cleanly */
+  .checkbox-container {
+    display: inline-flex;
+    align-items: flex-start;
+    gap: 10px;
+    font-family: sans-serif;
+    cursor: pointer;
+    user-select: none;
+  }
+
+  /* 2. Reset default browser styles & draw custom box */
+  .custom-checkbox {
+    appearance: none;
+    -webkit-appearance: none;
+    width: 18px;
+    height: 18px;
+    border: 2px solid #cbd5e1;
+    border-radius: 6px;
+    background-color: #fff;
+    cursor: pointer;
+    display: grid;
+    place-content: center;
+    transition: all 0.2s ease;
+  }
+
+  /* 3. Create the hidden checkmark using ::before */
+  .custom-checkbox::before {
+    content: "";
+    width: 10px;
+    height: 10px;
+    transform: scale(0);
+    transition: 0.15s transform ease-in-out;
+    background-color: white;
+    /* Draws a crisp checkmark shape */
+    clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+  }
+
+  /* 4. Style the checked state */
+  .custom-checkbox:checked {
+    background-color: #a99e8f;
+    border-color: #a99e8f;
+  }
+
+  .custom-checkbox:checked::before {
+    transform: scale(1);
+  }
+
+  /* 5. Keep keyboard focus visible for accessibility */
+  .custom-checkbox:focus-visible {
+    outline: 2px solid #93c5fd;
+    outline-offset: 2px;
+  }
+
+  .policy-link {
+    text-decoration: underline;
+  }
+</style>
 </head>
 <body style="background:#fff;padding-top:var(--nav-h);">
     <!-- Google Tag Manager (noscript) -->
@@ -83,30 +141,32 @@
     <p style="font-family:'Albert Sans',system-ui,sans-serif;font-size:20px;line-height:1.6;color:#4a423c;margin:0 0 48px;">Book a fitting, ask a question, or tell us how we can help.<br>Our team will get back to you as soon as possible.</p>
 
     <!-- FORM -->
-    <!--
-    <div style="display:flex;flex-direction:column;gap:16px;text-align:left;">
 
-      <input type="text" placeholder="Your name" style="width:100%;background:#f7f2e9;border:1px solid #e7decf;border-radius:12px;padding:18px 19px;font-family:'Albert Sans',system-ui,sans-serif;font-size:17px;color:#a99e8f;outline:none;box-sizing:border-box;">
-
-      <input type="email" placeholder="Email address" style="width:100%;background:#f7f2e9;border:1px solid #e7decf;border-radius:12px;padding:18px 19px;font-family:'Albert Sans',system-ui,sans-serif;font-size:17px;color:#a99e8f;outline:none;box-sizing:border-box;">
-
-      <input type="tel" placeholder="Phone number" style="width:100%;background:#f7f2e9;border:1px solid #e7decf;border-radius:12px;padding:18px 19px;font-family:'Albert Sans',system-ui,sans-serif;font-size:17px;color:#a99e8f;outline:none;box-sizing:border-box;">
-
-      <textarea placeholder="How can we help? Let us know if this is about compression, mastectomy products, or a referral." rows="5" style="width:100%;background:#f7f2e9;border:1px solid #e7decf;border-radius:12px;padding:18px 19px;font-family:'Albert Sans',system-ui,sans-serif;font-size:17px;color:#a99e8f;outline:none;resize:none;box-sizing:border-box;min-height:130px;"></textarea>
-
+    <form action="https://formspree.io/f/xoederwk" method="POST" style="display:flex;flex-direction:column;gap:16px;text-align:left;">
+      <input name="fullname" type="text" placeholder="Your name" style="width:100%;background:#f7f2e9;border:1px solid #e7decf;border-radius:12px;padding:18px 19px;font-family:'Albert Sans',system-ui,sans-serif;font-size:17px;color:#a99e8f;outline:none;box-sizing:border-box;">
+      <input name="email" type="email" placeholder="Email address" style="width:100%;background:#f7f2e9;border:1px solid #e7decf;border-radius:12px;padding:18px 19px;font-family:'Albert Sans',system-ui,sans-serif;font-size:17px;color:#a99e8f;outline:none;box-sizing:border-box;" required>
+      <input name="phone" type="tel" placeholder="Phone number" style="width:100%;background:#f7f2e9;border:1px solid #e7decf;border-radius:12px;padding:18px 19px;font-family:'Albert Sans',system-ui,sans-serif;font-size:17px;color:#a99e8f;outline:none;box-sizing:border-box;">
+      <label class="checkbox-container" style="width:100%; padding:0px 0px 10px;font-family:'Albert Sans',system-ui,sans-serif;font-size:14px;color:#a99e8f;outline:none;box-sizing:border-box;">
+        <input type="checkbox" name="Consent texting?" value="yes" type="checkbox" id="terms-box" class="custom-checkbox"> 
+        <span> 
+          I agree to receive text messages from P&H Services LLC about my appointments, orders and account. Message frequency varies. Message and data rates may apply. Reply STOP to opt out or HELP for help. Consent is not a condition of receiving services.<br>
+          See our <a class="policy-link" href="privacy-policy" target="_blank">Privacy Policy</a> | <a class="policy-link" href="text-messaging-terms" target="_blank">Terms</a> <br>
+        </span>
+      </label>
+      <textarea name="message" placeholder="How can we help? Let us know if this is about compression, mastectomy products, or a referral." rows="5" style="width:100%;background:#f7f2e9;border:1px solid #e7decf;border-radius:12px;padding:18px 19px;font-family:'Albert Sans',system-ui,sans-serif;font-size:17px;color:#a99e8f;outline:none;resize:none;box-sizing:border-box;min-height:130px;" required></textarea>
+      
       <div style="text-align:center;padding-top:10px;">
-        <button type="submit" style="background:#420c1e;color:#f8f3e5;font-family:'Albert Sans',system-ui,sans-serif;font-size:16px;font-weight:600;border:none;border-radius:40px;padding:17px 44px;cursor:pointer;">Send message</button>
+        <button type="submit" style="width: 100%;background:#420c1e;color:#f8f3e5;font-family:'Albert Sans',system-ui,sans-serif;font-size:16px;font-weight:600;border:none;border-radius:40px;padding:17px 44px;cursor:pointer;">Submit</button>
       </div>
-    -->
-      <div style="display: flex; flex-direction: column; align-items: center; gap: 30px; font-size: 26px;">
-        <span style="color: #420c1e; font-weight: 700;">
-          Send us an email: <a style="font-weight: 400; text-decoration: underline;" href="mailto:reception@phservnet.com">reception@phservnet.com</a>
-        </span>
-        or
-        <span style="color: #420c1e; font-weight: 700;">
-          Call us: <a style="font-weight: 400; text-decoration: underline;" href="tel:5129866291">512-986-6291</a>
-        </span>
-      </div>
+    </form>
+
+    <div style="display: flex; flex-direction: column; align-items: flex-start; gap: 20px; font-size: 24px; margin-top: 40px;">
+      <span style="color: #420c1e;">
+        Check out our <a style="font-weight: 400; text-decoration: underline;" href="privacy-policy">Text Messaging Privacy Policy </a>
+      </span>
+      <span style="color: #420c1e;">
+        Check out our <a style="font-weight: 400; text-decoration: underline;" href="text-messaging-terms">Text Messaging Terms and Conditions</a>
+      </span>
     </div>
   </div>
 
